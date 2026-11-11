@@ -1,0 +1,3033 @@
+{
+  "generatedAt": "2026-11-11",
+  "departure": "2026-11-12T08:30:00",
+  "departureNote": "Public-transport minutes are TFI Journey Planner estimates for a comparable weekday morning departure (Thursday 12 November 2026, leave after 08:30, Europe/Dublin), fastest itinerary, modes WALK+BUS+TRAM+RAIL+COACH+FERRY. They are not a live timetable. Evening or weekend services may differ. Walk and cycle minutes use OSRM road-network distance converted at 4.8 km/h and 15 km/h. Pairs under 250 m use straight-line distance and skip TFI.",
+  "origins": [
+    {
+      "id": "city-centre",
+      "name": "City Centre",
+      "nameZh": "市中心",
+      "query": "O'Connell Bridge, Dublin, Ireland",
+      "lat": 53.3473,
+      "lng": -6.2591,
+      "fixed": true,
+      "displayName": "O'Connell Bridge, Dublin, Ireland",
+      "geocodeMethod": "Fixed study origin (O'Connell Bridge), same coordinates as v1/v2."
+    },
+    {
+      "id": "tallaght",
+      "name": "Tallaght",
+      "nameZh": "Tallaght",
+      "query": "The Square, Tallaght, Dublin, Ireland",
+      "lat": 53.2865516,
+      "lng": -6.3717531,
+      "displayName": "The Square Shopping Centre, Belgard Square East, Tallaght-Springfield DED 1986, Dublin, South Dublin, County Dublin, Leinster, D24 ND77, Éire / Ireland",
+      "geocodeMethod": "OpenStreetMap Nominatim, query=The Square, Tallaght, Dublin, Ireland"
+    },
+    {
+      "id": "blanchardstown",
+      "name": "Blanchardstown",
+      "nameZh": "Blanchardstown",
+      "query": "Blanchardstown Centre, Dublin 15, Ireland",
+      "lat": 53.3932751,
+      "lng": -6.3920415,
+      "displayName": "Blanchardstown Centre, Blanchardstown-Coolmine DED 1986, Blanchardstown, Fingal, County Dublin, Leinster, Éire / Ireland",
+      "geocodeMethod": "OpenStreetMap Nominatim, query=Blanchardstown Centre, Dublin 15, Ireland"
+    },
+    {
+      "id": "clondalkin",
+      "name": "Clondalkin",
+      "nameZh": "Clondalkin",
+      "query": "Clondalkin, Dublin, Ireland",
+      "lat": 53.3219624,
+      "lng": -6.3942689,
+      "displayName": "Clondalkin, South Dublin, County Dublin, Leinster, Éire / Ireland",
+      "geocodeMethod": "OpenStreetMap Nominatim, query=Clondalkin, Dublin, Ireland"
+    },
+    {
+      "id": "coolock",
+      "name": "Coolock",
+      "nameZh": "Coolock",
+      "query": "Coolock, Dublin 17, Ireland",
+      "lat": 53.4053241,
+      "lng": -6.2178911,
+      "displayName": "Coolock, Dublin 17, Leinster, Éire / Ireland",
+      "geocodeMethod": "OpenStreetMap Nominatim, query=Coolock, Dublin 17, Ireland"
+    },
+    {
+      "id": "ballymun",
+      "name": "Ballymun",
+      "nameZh": "Ballymun",
+      "query": "Ballymun, Dublin 9, Ireland",
+      "lat": 53.3961058,
+      "lng": -6.2579033,
+      "displayName": "Ballymun C ED, Dublin, County Dublin, Leinster, Éire / Ireland",
+      "geocodeMethod": "OpenStreetMap Nominatim, query=Ballymun, Dublin 9, Ireland"
+    },
+    {
+      "id": "finglas",
+      "name": "Finglas",
+      "nameZh": "Finglas",
+      "query": "Finglas, Dublin 11, Ireland",
+      "lat": 53.389167,
+      "lng": -6.296944,
+      "displayName": "Finglas, Ballygall A ED, Dublin, County Dublin, Leinster, Éire / Ireland",
+      "geocodeMethod": "OpenStreetMap Nominatim, query=Finglas, Dublin 11, Ireland"
+    },
+    {
+      "id": "dun-laoghaire",
+      "name": "Dún Laoghaire",
+      "nameZh": "Dún Laoghaire",
+      "query": "Dún Laoghaire, County Dublin, Ireland",
+      "lat": 53.2922794,
+      "lng": -6.1360079,
+      "displayName": "Dún Laoghaire, Dún Laoghaire-Rathdown, County Dublin, Leinster, A96 T860, Éire / Ireland",
+      "geocodeMethod": "OpenStreetMap Nominatim, query=Dún Laoghaire, County Dublin, Ireland"
+    },
+    {
+      "id": "swords",
+      "name": "Swords",
+      "nameZh": "Swords",
+      "query": "Swords, County Dublin, Ireland",
+      "lat": 53.4594799,
+      "lng": -6.219175,
+      "displayName": "Swords, Fingal, County Dublin, Leinster, Éire / Ireland",
+      "geocodeMethod": "OpenStreetMap Nominatim, query=Swords, County Dublin, Ireland"
+    },
+    {
+      "id": "lucan",
+      "name": "Lucan",
+      "nameZh": "Lucan",
+      "query": "Lucan, County Dublin, Ireland",
+      "lat": 53.3567157,
+      "lng": -6.4501534,
+      "displayName": "Lucan, South Dublin, County Dublin, Leinster, K78 HF83, Éire / Ireland",
+      "geocodeMethod": "OpenStreetMap Nominatim, query=Lucan, County Dublin, Ireland"
+    },
+    {
+      "id": "rathmines",
+      "name": "Rathmines",
+      "nameZh": "Rathmines",
+      "query": "Rathmines, Dublin 6, Ireland",
+      "lat": 53.3265199,
+      "lng": -6.2648571,
+      "displayName": "Rathmines, Rathmines West B ED, Dublin, County Dublin, Leinster, D06 Y5Y8, Éire / Ireland",
+      "geocodeMethod": "OpenStreetMap Nominatim, query=Rathmines, Dublin 6, Ireland"
+    },
+    {
+      "id": "balbriggan",
+      "name": "Balbriggan",
+      "nameZh": "Balbriggan",
+      "query": "Balbriggan, County Dublin, Ireland",
+      "lat": 53.6118769,
+      "lng": -6.1823282,
+      "displayName": "Balbriggan, Railway Street, Balbriggan Urban DED 1986, Balbriggan, Fingal, County Dublin, Leinster, Éire / Ireland",
+      "geocodeMethod": "OpenStreetMap Nominatim, query=Balbriggan, County Dublin, Ireland"
+    }
+  ],
+  "destinations": [
+    {
+      "id": "53.34292,-6.29946",
+      "lat": 53.342917,
+      "lng": -6.299465,
+      "name": "Matheson Creativity Hub, IMMA",
+      "address": "Royal Hospital Kilmainham, Dublin 8, Ireland",
+      "itemIds": [
+        "OPP-01"
+      ]
+    },
+    {
+      "id": "53.29293,-6.13178",
+      "lat": 53.292935,
+      "lng": -6.131782,
+      "name": "Room 4, Level 5, dlr LexIcon",
+      "address": "Haigh Terrace, Moran Park, Dún Laoghaire, County Dublin, Ireland",
+      "itemIds": [
+        "OPP-02"
+      ]
+    },
+    {
+      "id": "53.39625,-6.21197",
+      "lat": 53.396254,
+      "lng": -6.211968,
+      "name": "Coolock Library",
+      "address": "Barryscourt Road, Dublin 17, Ireland",
+      "itemIds": [
+        "OPP-03"
+      ]
+    },
+    {
+      "id": "53.34027,-6.26134",
+      "lat": 53.340267,
+      "lng": -6.261344,
+      "name": "Caffè Nero, King Street South",
+      "address": "King Street South, Dublin 2, Ireland",
+      "itemIds": [
+        "OPP-04"
+      ]
+    },
+    {
+      "id": "53.34997,-6.26465",
+      "lat": 53.349968,
+      "lng": -6.264651,
+      "name": "Ilac Centre (Dublin City Library)",
+      "address": "Ilac Centre, Henry Street, North City, Dublin, Ireland",
+      "itemIds": [
+        "OPP-05"
+      ]
+    },
+    {
+      "id": "53.35435,-6.26415",
+      "lat": 53.354346,
+      "lng": -6.264151,
+      "name": "Irish Writers Centre",
+      "address": "19 Parnell Square, Dublin 1, Ireland",
+      "itemIds": [
+        "OPP-06",
+        "OPP-16"
+      ]
+    },
+    {
+      "id": "53.32073,-6.30854",
+      "lat": 53.320735,
+      "lng": -6.308541,
+      "name": "City of Dublin FET College, Crumlin (Southwest Campus)",
+      "address": "Crumlin Road, Dublin 12, Ireland",
+      "itemIds": [
+        "OPP-07",
+        "OPP-08"
+      ]
+    },
+    {
+      "id": "53.28808,-6.37312",
+      "lat": 53.288083,
+      "lng": -6.373123,
+      "name": "Rua Red, South Dublin Arts Centre (in-person sessions); intro session online",
+      "address": "Plás Parthalán, Tallaght, Ireland",
+      "itemIds": [
+        "OPP-09",
+        "OPP-21",
+        "OPP-22",
+        "OPP-23",
+        "OPP-40"
+      ]
+    },
+    {
+      "id": "53.34222,-6.23920",
+      "lat": 53.342224,
+      "lng": -6.239199,
+      "name": "The Lir Academy",
+      "address": "Trinity Technology and Enterprise Campus, Pearse Street (at Grand Canal Quay), Dublin 2, Ireland",
+      "itemIds": [
+        "OPP-11",
+        "OPP-28",
+        "OPP-29",
+        "OPP-30"
+      ]
+    },
+    {
+      "id": "53.34109,-6.26281",
+      "lat": 53.341088,
+      "lng": -6.262811,
+      "name": "Flux Studios D2",
+      "address": "4 Chatham Row, Dublin, Ireland",
+      "itemIds": [
+        "OPP-12"
+      ]
+    },
+    {
+      "id": "53.35313,-6.25494",
+      "lat": 53.353132,
+      "lng": -6.254941,
+      "name": "SVP House (National Digital Marketing & Communications team)",
+      "address": "91-92 Sean MacDermott Street, Dublin 1, Ireland",
+      "itemIds": [
+        "OPP-13"
+      ]
+    },
+    {
+      "id": "53.35911,-6.24235",
+      "lat": 53.359114,
+      "lng": -6.242355,
+      "name": "Lensmen office",
+      "address": "17 Nottingham Street, North Strand, Dublin 3, Ireland",
+      "itemIds": [
+        "OPP-14"
+      ]
+    },
+    {
+      "id": "53.39582,-6.26291",
+      "lat": 53.395821,
+      "lng": -6.262914,
+      "name": "Axis Cafe",
+      "address": "Axis Ballymun, Main Street, Ballymun, Dublin 9, Ireland",
+      "itemIds": [
+        "OPP-17"
+      ]
+    },
+    {
+      "id": "53.35419,-6.26276",
+      "lat": 53.35419,
+      "lng": -6.262762,
+      "name": "Poetry Ireland, No. 11 Parnell Square",
+      "address": "11 Parnell Square East, Dublin 1, Ireland",
+      "itemIds": [
+        "OPP-18"
+      ]
+    },
+    {
+      "id": "53.34563,-6.26361",
+      "lat": 53.345631,
+      "lng": -6.263607,
+      "name": "Temple Bar Gallery + Studios (via Dublin Art Book Fair check-in)",
+      "address": "5-9 Temple Bar, Dublin 2, Ireland",
+      "itemIds": [
+        "OPP-20"
+      ]
+    },
+    {
+      "id": "53.52186,-6.10195",
+      "lat": 53.521862,
+      "lng": -6.10195,
+      "name": "Rush Library",
+      "address": "Chapel Green, Rush, Co. Dublin, Ireland",
+      "itemIds": [
+        "OPP-24"
+      ]
+    },
+    {
+      "id": "53.39076,-6.39123",
+      "lat": 53.390758,
+      "lng": -6.391235,
+      "name": "Blanchardstown Library",
+      "address": "The Civic Centre, Blanchardstown Centre, Dublin 15, Ireland",
+      "itemIds": [
+        "OPP-25",
+        "OPP-26"
+      ]
+    },
+    {
+      "id": "53.34412,-6.28332",
+      "lat": 53.344125,
+      "lng": -6.283322,
+      "name": "ID8 Studio, The Digital Hub",
+      "address": "The Digital Hub, Dublin 8, Ireland",
+      "itemIds": [
+        "OPP-35"
+      ]
+    },
+    {
+      "id": "53.34112,-6.25450",
+      "lat": 53.341125,
+      "lng": -6.2545,
+      "name": "Coty Ireland (Dublin office)",
+      "address": "Dublin 2, Ireland",
+      "itemIds": [
+        "OPP-37"
+      ]
+    },
+    {
+      "id": "53.35716,-6.24607",
+      "lat": 53.357158,
+      "lng": -6.246067,
+      "name": "Charleville Mall Library",
+      "address": "Charleville Mall, North Strand, Dublin 1, Ireland",
+      "itemIds": [
+        "OPP-39"
+      ]
+    },
+    {
+      "id": "53.33879,-6.25006",
+      "lat": 53.338792,
+      "lng": -6.250064,
+      "name": "The Arts Council offices",
+      "address": "70 Merrion Square, Dublin 2, Ireland",
+      "itemIds": [
+        "OPP-42"
+      ]
+    },
+    {
+      "id": "53.34511,-6.26468",
+      "lat": 53.3451133,
+      "lng": -6.2646806,
+      "name": "Irish Theatre Institute",
+      "address": "17 Eustace Street, Temple Bar, Dublin 2, Ireland",
+      "itemIds": [
+        "OPP-43"
+      ]
+    }
+  ],
+  "matrix": {
+    "city-centre": {
+      "53.34292,-6.29946": {
+        "pt": 22,
+        "walk": 50,
+        "cycle": 16,
+        "osrmMeters": 3963,
+        "ptModes": "WALK + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 2723
+      },
+      "53.29293,-6.13178": {
+        "pt": 32,
+        "walk": 160,
+        "cycle": 51,
+        "osrmMeters": 12826,
+        "ptModes": "WALK + RAIL",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 10395
+      },
+      "53.39625,-6.21197": {
+        "pt": 34,
+        "walk": 92,
+        "cycle": 30,
+        "osrmMeters": 7384,
+        "ptModes": "WALK + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 6278
+      },
+      "53.34027,-6.26134": {
+        "pt": 13,
+        "walk": 41,
+        "cycle": 13,
+        "osrmMeters": 3287,
+        "ptModes": "WALK + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 796
+      },
+      "53.34997,-6.26465": {
+        "pt": 9,
+        "walk": 23,
+        "cycle": 7,
+        "osrmMeters": 1852,
+        "ptModes": "WALK",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 473
+      },
+      "53.35435,-6.26415": {
+        "pt": 10,
+        "walk": 24,
+        "cycle": 8,
+        "osrmMeters": 1925,
+        "ptModes": "WALK + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 852
+      },
+      "53.32073,-6.30854": {
+        "pt": 30,
+        "walk": 81,
+        "cycle": 26,
+        "osrmMeters": 6482,
+        "ptModes": "WALK + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 4416
+      },
+      "53.28808,-6.37312": {
+        "pt": 44,
+        "walk": 170,
+        "cycle": 54,
+        "osrmMeters": 13583,
+        "ptModes": "WALK + TRAM",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 10036
+      },
+      "53.34222,-6.23920": {
+        "pt": 13,
+        "walk": 25,
+        "cycle": 8,
+        "osrmMeters": 2030,
+        "ptModes": "WALK + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 1437
+      },
+      "53.34109,-6.26281": {
+        "pt": 11,
+        "walk": 37,
+        "cycle": 12,
+        "osrmMeters": 2935,
+        "ptModes": "WALK + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 733
+      },
+      "53.35313,-6.25494": {
+        "pt": 11,
+        "walk": 13,
+        "cycle": 4,
+        "osrmMeters": 1003,
+        "ptModes": "WALK + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 705
+      },
+      "53.35911,-6.24235": {
+        "pt": 13,
+        "walk": 25,
+        "cycle": 8,
+        "osrmMeters": 2001,
+        "ptModes": "WALK + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 1721
+      },
+      "53.39582,-6.26291": {
+        "pt": 34,
+        "walk": 84,
+        "cycle": 27,
+        "osrmMeters": 6730,
+        "ptModes": "WALK + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 5401
+      },
+      "53.35419,-6.26276": {
+        "pt": 10,
+        "walk": 23,
+        "cycle": 7,
+        "osrmMeters": 1846,
+        "ptModes": "WALK + TRAM",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 804
+      },
+      "53.34563,-6.26361": {
+        "pt": 6,
+        "walk": 33,
+        "cycle": 10,
+        "osrmMeters": 2625,
+        "ptModes": "WALK",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 352
+      },
+      "53.52186,-6.10195": {
+        "pt": 57,
+        "walk": 330,
+        "cycle": 106,
+        "osrmMeters": 26429,
+        "ptModes": "WALK + RAIL + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 22026
+      },
+      "53.39076,-6.39123": {
+        "pt": 47,
+        "walk": 147,
+        "cycle": 47,
+        "osrmMeters": 11733,
+        "ptModes": "WALK + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 10010
+      },
+      "53.34412,-6.28332": {
+        "pt": 16,
+        "walk": 38,
+        "cycle": 12,
+        "osrmMeters": 3028,
+        "ptModes": "WALK + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 1646
+      },
+      "53.34112,-6.25450": {
+        "pt": 10,
+        "walk": 46,
+        "cycle": 15,
+        "osrmMeters": 3659,
+        "ptModes": "WALK + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 751
+      },
+      "53.35716,-6.24607": {
+        "pt": 12,
+        "walk": 22,
+        "cycle": 7,
+        "osrmMeters": 1730,
+        "ptModes": "WALK + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 1396
+      },
+      "53.33879,-6.25006": {
+        "pt": 11,
+        "walk": 22,
+        "cycle": 7,
+        "osrmMeters": 1728,
+        "ptModes": "WALK + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 1120
+      },
+      "53.34511,-6.26468": {
+        "pt": 7,
+        "walk": 29,
+        "cycle": 9,
+        "osrmMeters": 2353,
+        "ptModes": "WALK + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 443
+      }
+    },
+    "tallaght": {
+      "53.34292,-6.29946": {
+        "pt": 40,
+        "walk": 139,
+        "cycle": 45,
+        "osrmMeters": 11139,
+        "ptModes": "WALK + TRAM",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 7896
+      },
+      "53.29293,-6.13178": {
+        "pt": 81,
+        "walk": 255,
+        "cycle": 82,
+        "osrmMeters": 20400,
+        "ptModes": "WALK + TRAM + RAIL",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 15966
+      },
+      "53.39625,-6.21197": {
+        "pt": 85,
+        "walk": 322,
+        "cycle": 103,
+        "osrmMeters": 25776,
+        "ptModes": "WALK + TRAM + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 16166
+      },
+      "53.34027,-6.26134": {
+        "pt": 57,
+        "walk": 155,
+        "cycle": 50,
+        "osrmMeters": 12440,
+        "ptModes": "WALK + TRAM",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 9459
+      },
+      "53.34997,-6.26465": {
+        "pt": 47,
+        "walk": 158,
+        "cycle": 50,
+        "osrmMeters": 12607,
+        "ptModes": "WALK + TRAM",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 10017
+      },
+      "53.35435,-6.26415": {
+        "pt": 56,
+        "walk": 164,
+        "cycle": 52,
+        "osrmMeters": 13083,
+        "ptModes": "WALK + TRAM",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 10388
+      },
+      "53.32073,-6.30854": {
+        "pt": 33,
+        "walk": 101,
+        "cycle": 32,
+        "osrmMeters": 8116,
+        "ptModes": "WALK + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 5665
+      },
+      "53.28808,-6.37312": {
+        "pt": 2,
+        "walk": 2,
+        "cycle": 1,
+        "osrmMeters": 193,
+        "ptModes": "WALK",
+        "ptNote": "Origin and venue are 193 m apart (straight line); TFI not called. Walk/cycle from straight-line distance.",
+        "nearSkip": true,
+        "straightLineMeters": 193
+      },
+      "53.34222,-6.23920": {
+        "pt": 63,
+        "walk": 163,
+        "cycle": 52,
+        "osrmMeters": 13058,
+        "ptModes": "WALK + TRAM + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 10764
+      },
+      "53.34109,-6.26281": {
+        "pt": 54,
+        "walk": 155,
+        "cycle": 50,
+        "osrmMeters": 12377,
+        "ptModes": "WALK + TRAM",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 9442
+      },
+      "53.35313,-6.25494": {
+        "pt": 53,
+        "walk": 179,
+        "cycle": 57,
+        "osrmMeters": 14324,
+        "ptModes": "WALK + TRAM",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 10724
+      },
+      "53.35911,-6.24235": {
+        "pt": 61,
+        "walk": 193,
+        "cycle": 62,
+        "osrmMeters": 15464,
+        "ptModes": "WALK + TRAM + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 11788
+      },
+      "53.39582,-6.26291": {
+        "pt": 82,
+        "walk": 276,
+        "cycle": 88,
+        "osrmMeters": 22049,
+        "ptModes": "WALK + TRAM + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 14136
+      },
+      "53.35419,-6.26276": {
+        "pt": 54,
+        "walk": 164,
+        "cycle": 53,
+        "osrmMeters": 13154,
+        "ptModes": "WALK + TRAM",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 10439
+      },
+      "53.34563,-6.26361": {
+        "pt": 47,
+        "walk": 151,
+        "cycle": 48,
+        "osrmMeters": 12067,
+        "ptModes": "WALK + TRAM",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 9735
+      },
+      "53.52186,-6.10195": {
+        "pt": 92,
+        "walk": 516,
+        "cycle": 165,
+        "osrmMeters": 41279,
+        "ptModes": "WALK + TRAM + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 31694
+      },
+      "53.39076,-6.39123": {
+        "pt": 53,
+        "walk": 192,
+        "cycle": 62,
+        "osrmMeters": 15390,
+        "ptModes": "WALK + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 11659
+      },
+      "53.34412,-6.28332": {
+        "pt": 44,
+        "walk": 151,
+        "cycle": 48,
+        "osrmMeters": 12074,
+        "ptModes": "WALK + TRAM",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 8689
+      },
+      "53.34112,-6.25450": {
+        "pt": 61,
+        "walk": 160,
+        "cycle": 51,
+        "osrmMeters": 12812,
+        "ptModes": "WALK + TRAM",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 9874
+      },
+      "53.35716,-6.24607": {
+        "pt": 58,
+        "walk": 185,
+        "cycle": 59,
+        "osrmMeters": 14821,
+        "ptModes": "WALK + TRAM + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 11460
+      },
+      "53.33879,-6.25006": {
+        "pt": 62,
+        "walk": 152,
+        "cycle": 49,
+        "osrmMeters": 12187,
+        "ptModes": "WALK + TRAM + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 9955
+      },
+      "53.34511,-6.26468": {
+        "pt": 46,
+        "walk": 147,
+        "cycle": 47,
+        "osrmMeters": 11795,
+        "ptModes": "WALK + TRAM",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 9643
+      }
+    },
+    "blanchardstown": {
+      "53.34292,-6.29946": {
+        "pt": 59,
+        "walk": 163,
+        "cycle": 52,
+        "osrmMeters": 13053,
+        "ptModes": "WALK + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 8312
+      },
+      "53.29293,-6.13178": {
+        "pt": 84,
+        "walk": 401,
+        "cycle": 128,
+        "osrmMeters": 32040,
+        "ptModes": "WALK + BUS + RAIL",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 20567
+      },
+      "53.39625,-6.21197": {
+        "pt": 83,
+        "walk": 192,
+        "cycle": 62,
+        "osrmMeters": 15384,
+        "ptModes": "WALK + BUS + RAIL",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 11944
+      },
+      "53.34027,-6.26134": {
+        "pt": 63,
+        "walk": 164,
+        "cycle": 53,
+        "osrmMeters": 13155,
+        "ptModes": "WALK + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 10485
+      },
+      "53.34997,-6.26465": {
+        "pt": 54,
+        "walk": 138,
+        "cycle": 44,
+        "osrmMeters": 11001,
+        "ptModes": "WALK + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 9727
+      },
+      "53.35435,-6.26415": {
+        "pt": 50,
+        "walk": 143,
+        "cycle": 46,
+        "osrmMeters": 11477,
+        "ptModes": "WALK + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 9524
+      },
+      "53.32073,-6.30854": {
+        "pt": 74,
+        "walk": 200,
+        "cycle": 64,
+        "osrmMeters": 16020,
+        "ptModes": "WALK + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 9786
+      },
+      "53.28808,-6.37312": {
+        "pt": 56,
+        "walk": 200,
+        "cycle": 64,
+        "osrmMeters": 16040,
+        "ptModes": "WALK + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 11764
+      },
+      "53.34222,-6.23920": {
+        "pt": 67,
+        "walk": 165,
+        "cycle": 53,
+        "osrmMeters": 13204,
+        "ptModes": "WALK + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 11621
+      },
+      "53.34109,-6.26281": {
+        "pt": 59,
+        "walk": 152,
+        "cycle": 49,
+        "osrmMeters": 12152,
+        "ptModes": "WALK + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 10353
+      },
+      "53.35313,-6.25494": {
+        "pt": 55,
+        "walk": 141,
+        "cycle": 45,
+        "osrmMeters": 11290,
+        "ptModes": "WALK + BUS + RAIL",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 10131
+      },
+      "53.35911,-6.24235": {
+        "pt": 64,
+        "walk": 152,
+        "cycle": 49,
+        "osrmMeters": 12158,
+        "ptModes": "WALK + BUS + RAIL",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 10631
+      },
+      "53.39582,-6.26291": {
+        "pt": 56,
+        "walk": 146,
+        "cycle": 47,
+        "osrmMeters": 11657,
+        "ptModes": "WALK + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 8567
+      },
+      "53.35419,-6.26276": {
+        "pt": 51,
+        "walk": 136,
+        "cycle": 44,
+        "osrmMeters": 10915,
+        "ptModes": "WALK + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 9615
+      },
+      "53.34563,-6.26361": {
+        "pt": 50,
+        "walk": 148,
+        "cycle": 47,
+        "osrmMeters": 11842,
+        "ptModes": "WALK + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 10034
+      },
+      "53.52186,-6.10195": {
+        "pt": 100,
+        "walk": 386,
+        "cycle": 124,
+        "osrmMeters": 30888,
+        "ptModes": "WALK + BUS + RAIL",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 23944
+      },
+      "53.39076,-6.39123": {
+        "pt": 6,
+        "walk": 5,
+        "cycle": 2,
+        "osrmMeters": 425,
+        "ptModes": "WALK",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 285
+      },
+      "53.34412,-6.28332": {
+        "pt": 46,
+        "walk": 134,
+        "cycle": 43,
+        "osrmMeters": 10698,
+        "ptModes": "WALK + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 9050
+      },
+      "53.34112,-6.25450": {
+        "pt": 60,
+        "walk": 169,
+        "cycle": 54,
+        "osrmMeters": 13528,
+        "ptModes": "WALK + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 10812
+      },
+      "53.35716,-6.24607": {
+        "pt": 60,
+        "walk": 144,
+        "cycle": 46,
+        "osrmMeters": 11515,
+        "ptModes": "WALK + BUS + RAIL",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 10483
+      },
+      "53.33879,-6.25006": {
+        "pt": 64,
+        "walk": 166,
+        "cycle": 53,
+        "osrmMeters": 13252,
+        "ptModes": "WALK + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 11200
+      },
+      "53.34511,-6.26468": {
+        "pt": 49,
+        "walk": 145,
+        "cycle": 46,
+        "osrmMeters": 11570,
+        "ptModes": "WALK + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 10004
+      }
+    },
+    "clondalkin": {
+      "53.34292,-6.29946": {
+        "pt": 45,
+        "walk": 97,
+        "cycle": 31,
+        "osrmMeters": 7754,
+        "ptModes": "WALK + BUS + TRAM",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 6713
+      },
+      "53.29293,-6.13178": {
+        "pt": 88,
+        "walk": 290,
+        "cycle": 93,
+        "osrmMeters": 23200,
+        "ptModes": "WALK + RAIL",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 17736
+      },
+      "53.39625,-6.21197": {
+        "pt": 87,
+        "walk": 280,
+        "cycle": 90,
+        "osrmMeters": 22379,
+        "ptModes": "WALK + BUS + TRAM",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 14649
+      },
+      "53.34027,-6.26134": {
+        "pt": 60,
+        "walk": 143,
+        "cycle": 46,
+        "osrmMeters": 11402,
+        "ptModes": "WALK + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 9058
+      },
+      "53.34997,-6.26465": {
+        "pt": 50,
+        "walk": 135,
+        "cycle": 43,
+        "osrmMeters": 10819,
+        "ptModes": "WALK + BUS + TRAM",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 9152
+      },
+      "53.35435,-6.26415": {
+        "pt": 61,
+        "walk": 141,
+        "cycle": 45,
+        "osrmMeters": 11296,
+        "ptModes": "WALK + BUS + TRAM",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 9359
+      },
+      "53.32073,-6.30854": {
+        "pt": 47,
+        "walk": 87,
+        "cycle": 28,
+        "osrmMeters": 6949,
+        "ptModes": "WALK + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 5696
+      },
+      "53.28808,-6.37312": {
+        "pt": 21,
+        "walk": 64,
+        "cycle": 20,
+        "osrmMeters": 5118,
+        "ptModes": "WALK + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 4021
+      },
+      "53.34222,-6.23920": {
+        "pt": 68,
+        "walk": 150,
+        "cycle": 48,
+        "osrmMeters": 12020,
+        "ptModes": "WALK + BUS + TRAM",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 10541
+      },
+      "53.34109,-6.26281": {
+        "pt": 57,
+        "walk": 132,
+        "cycle": 42,
+        "osrmMeters": 10570,
+        "ptModes": "WALK + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 8985
+      },
+      "53.35313,-6.25494": {
+        "pt": 60,
+        "walk": 154,
+        "cycle": 49,
+        "osrmMeters": 12350,
+        "ptModes": "WALK + BUS + TRAM",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 9879
+      },
+      "53.35911,-6.24235": {
+        "pt": 71,
+        "walk": 165,
+        "cycle": 53,
+        "osrmMeters": 13217,
+        "ptModes": "WALK + BUS + TRAM",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 10899
+      },
+      "53.39582,-6.26291": {
+        "pt": 85,
+        "walk": 233,
+        "cycle": 75,
+        "osrmMeters": 18652,
+        "ptModes": "WALK + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 11976
+      },
+      "53.35419,-6.26276": {
+        "pt": 60,
+        "walk": 142,
+        "cycle": 45,
+        "osrmMeters": 11367,
+        "ptModes": "WALK + BUS + TRAM",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 9438
+      },
+      "53.34563,-6.26361": {
+        "pt": 52,
+        "walk": 128,
+        "cycle": 41,
+        "osrmMeters": 10259,
+        "ptModes": "WALK + BUS + TRAM",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 9066
+      },
+      "53.52186,-6.10195": {
+        "pt": 85,
+        "walk": 474,
+        "cycle": 152,
+        "osrmMeters": 37883,
+        "ptModes": "WALK + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 29483
+      },
+      "53.39076,-6.39123": {
+        "pt": 51,
+        "walk": 150,
+        "cycle": 48,
+        "osrmMeters": 11993,
+        "ptModes": "WALK + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 7652
+      },
+      "53.34412,-6.28332": {
+        "pt": 43,
+        "walk": 109,
+        "cycle": 35,
+        "osrmMeters": 8689,
+        "ptModes": "WALK + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 7768
+      },
+      "53.34112,-6.25450": {
+        "pt": 60,
+        "walk": 147,
+        "cycle": 47,
+        "osrmMeters": 11774,
+        "ptModes": "WALK + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 9523
+      },
+      "53.35716,-6.24607": {
+        "pt": 67,
+        "walk": 157,
+        "cycle": 50,
+        "osrmMeters": 12575,
+        "ptModes": "WALK + BUS + TRAM",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 10589
+      },
+      "53.33879,-6.25006": {
+        "pt": 70,
+        "walk": 139,
+        "cycle": 45,
+        "osrmMeters": 11149,
+        "ptModes": "WALK + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 9757
+      },
+      "53.34511,-6.26468": {
+        "pt": 51,
+        "walk": 125,
+        "cycle": 40,
+        "osrmMeters": 9988,
+        "ptModes": "WALK + BUS + TRAM",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 8982
+      }
+    },
+    "coolock": {
+      "53.34292,-6.29946": {
+        "pt": 81,
+        "walk": 132,
+        "cycle": 42,
+        "osrmMeters": 10596,
+        "ptModes": "WALK + BUS + TRAM",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 8800
+      },
+      "53.29293,-6.13178": {
+        "pt": 90,
+        "walk": 288,
+        "cycle": 92,
+        "osrmMeters": 23032,
+        "ptModes": "WALK + BUS + RAIL",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 13742
+      },
+      "53.39625,-6.21197": {
+        "pt": 24,
+        "walk": 21,
+        "cycle": 7,
+        "osrmMeters": 1711,
+        "ptModes": "WALK",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 1082
+      },
+      "53.34027,-6.26134": {
+        "pt": 65,
+        "walk": 141,
+        "cycle": 45,
+        "osrmMeters": 11319,
+        "ptModes": "WALK + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 7787
+      },
+      "53.34997,-6.26465": {
+        "pt": 57,
+        "walk": 101,
+        "cycle": 32,
+        "osrmMeters": 8081,
+        "ptModes": "WALK + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 6893
+      },
+      "53.35435,-6.26415": {
+        "pt": 61,
+        "walk": 103,
+        "cycle": 33,
+        "osrmMeters": 8222,
+        "ptModes": "WALK + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 6446
+      },
+      "53.32073,-6.30854": {
+        "pt": 87,
+        "walk": 170,
+        "cycle": 54,
+        "osrmMeters": 13564,
+        "ptModes": "WALK + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 11165
+      },
+      "53.28808,-6.37312": {
+        "pt": 96,
+        "walk": 331,
+        "cycle": 106,
+        "osrmMeters": 26506,
+        "ptModes": "WALK + BUS + TRAM",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 16617
+      },
+      "53.34222,-6.23920": {
+        "pt": 70,
+        "walk": 110,
+        "cycle": 35,
+        "osrmMeters": 8790,
+        "ptModes": "WALK + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 7157
+      },
+      "53.34109,-6.26281": {
+        "pt": 65,
+        "walk": 129,
+        "cycle": 41,
+        "osrmMeters": 10316,
+        "ptModes": "WALK + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 7739
+      },
+      "53.35313,-6.25494": {
+        "pt": 54,
+        "walk": 95,
+        "cycle": 30,
+        "osrmMeters": 7586,
+        "ptModes": "WALK + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 6302
+      },
+      "53.35911,-6.24235": {
+        "pt": 46,
+        "walk": 82,
+        "cycle": 26,
+        "osrmMeters": 6596,
+        "ptModes": "WALK + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 5388
+      },
+      "53.39582,-6.26291": {
+        "pt": 36,
+        "walk": 60,
+        "cycle": 19,
+        "osrmMeters": 4792,
+        "ptModes": "WALK + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 3166
+      },
+      "53.35419,-6.26276": {
+        "pt": 59,
+        "walk": 94,
+        "cycle": 30,
+        "osrmMeters": 7496,
+        "ptModes": "WALK + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 6418
+      },
+      "53.34563,-6.26361": {
+        "pt": 58,
+        "walk": 125,
+        "cycle": 40,
+        "osrmMeters": 10006,
+        "ptModes": "WALK + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 7298
+      },
+      "53.52186,-6.10195": {
+        "pt": 85,
+        "walk": 281,
+        "cycle": 90,
+        "osrmMeters": 22510,
+        "ptModes": "WALK + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 15061
+      },
+      "53.39076,-6.39123": {
+        "pt": 100,
+        "walk": 204,
+        "cycle": 65,
+        "osrmMeters": 16299,
+        "ptModes": "WALK + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 11606
+      },
+      "53.34412,-6.28332": {
+        "pt": 73,
+        "walk": 120,
+        "cycle": 38,
+        "osrmMeters": 9571,
+        "ptModes": "WALK + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 8071
+      },
+      "53.34112,-6.25450": {
+        "pt": 67,
+        "walk": 146,
+        "cycle": 47,
+        "osrmMeters": 11692,
+        "ptModes": "WALK + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 7540
+      },
+      "53.35716,-6.24607": {
+        "pt": 47,
+        "walk": 95,
+        "cycle": 30,
+        "osrmMeters": 7579,
+        "ptModes": "WALK + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 5673
+      },
+      "53.33879,-6.25006": {
+        "pt": 67,
+        "walk": 119,
+        "cycle": 38,
+        "osrmMeters": 9548,
+        "ptModes": "WALK + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 7700
+      },
+      "53.34511,-6.26468": {
+        "pt": 60,
+        "walk": 122,
+        "cycle": 39,
+        "osrmMeters": 9734,
+        "ptModes": "WALK + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 7380
+      }
+    },
+    "ballymun": {
+      "53.34292,-6.29946": {
+        "pt": 63,
+        "walk": 106,
+        "cycle": 34,
+        "osrmMeters": 8476,
+        "ptModes": "WALK + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 6526
+      },
+      "53.29293,-6.13178": {
+        "pt": 67,
+        "walk": 288,
+        "cycle": 92,
+        "osrmMeters": 23075,
+        "ptModes": "WALK + BUS + RAIL",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 14202
+      },
+      "53.39625,-6.21197": {
+        "pt": 35,
+        "walk": 49,
+        "cycle": 16,
+        "osrmMeters": 3913,
+        "ptModes": "WALK + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 3046
+      },
+      "53.34027,-6.26134": {
+        "pt": 44,
+        "walk": 115,
+        "cycle": 37,
+        "osrmMeters": 9199,
+        "ptModes": "WALK + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 6213
+      },
+      "53.34997,-6.26465": {
+        "pt": 44,
+        "walk": 84,
+        "cycle": 27,
+        "osrmMeters": 6751,
+        "ptModes": "WALK + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 5150
+      },
+      "53.35435,-6.26415": {
+        "pt": 42,
+        "walk": 86,
+        "cycle": 28,
+        "osrmMeters": 6891,
+        "ptModes": "WALK + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 4662
+      },
+      "53.32073,-6.30854": {
+        "pt": 80,
+        "walk": 143,
+        "cycle": 46,
+        "osrmMeters": 11444,
+        "ptModes": "WALK + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 9029
+      },
+      "53.28808,-6.37312": {
+        "pt": 80,
+        "walk": 275,
+        "cycle": 88,
+        "osrmMeters": 22002,
+        "ptModes": "WALK + BUS + TRAM",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 14240
+      },
+      "53.34222,-6.23920": {
+        "pt": 51,
+        "walk": 101,
+        "cycle": 32,
+        "osrmMeters": 8118,
+        "ptModes": "WALK + BUS + RAIL",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 6119
+      },
+      "53.34109,-6.26281": {
+        "pt": 44,
+        "walk": 102,
+        "cycle": 33,
+        "osrmMeters": 8195,
+        "ptModes": "WALK + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 6126
+      },
+      "53.35313,-6.25494": {
+        "pt": 43,
+        "walk": 78,
+        "cycle": 25,
+        "osrmMeters": 6255,
+        "ptModes": "WALK + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 4783
+      },
+      "53.35911,-6.24235": {
+        "pt": 50,
+        "walk": 77,
+        "cycle": 25,
+        "osrmMeters": 6188,
+        "ptModes": "WALK + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 4241
+      },
+      "53.39582,-6.26291": {
+        "pt": 8,
+        "walk": 6,
+        "cycle": 2,
+        "osrmMeters": 493,
+        "ptModes": "WALK",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 334
+      },
+      "53.35419,-6.26276": {
+        "pt": 42,
+        "walk": 77,
+        "cycle": 25,
+        "osrmMeters": 6165,
+        "ptModes": "WALK + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 4672
+      },
+      "53.34563,-6.26361": {
+        "pt": 40,
+        "walk": 99,
+        "cycle": 32,
+        "osrmMeters": 7885,
+        "ptModes": "WALK + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 5625
+      },
+      "53.52186,-6.10195": {
+        "pt": 69,
+        "walk": 273,
+        "cycle": 87,
+        "osrmMeters": 21858,
+        "ptModes": "WALK + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 17382
+      },
+      "53.39076,-6.39123": {
+        "pt": 64,
+        "walk": 147,
+        "cycle": 47,
+        "osrmMeters": 11796,
+        "ptModes": "WALK + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 8861
+      },
+      "53.34412,-6.28332": {
+        "pt": 56,
+        "walk": 93,
+        "cycle": 30,
+        "osrmMeters": 7450,
+        "ptModes": "WALK + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 6021
+      },
+      "53.34112,-6.25450": {
+        "pt": 40,
+        "walk": 120,
+        "cycle": 38,
+        "osrmMeters": 9571,
+        "ptModes": "WALK + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 6118
+      },
+      "53.35716,-6.24607": {
+        "pt": 49,
+        "walk": 80,
+        "cycle": 26,
+        "osrmMeters": 6429,
+        "ptModes": "WALK + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 4401
+      },
+      "53.33879,-6.25006": {
+        "pt": 46,
+        "walk": 103,
+        "cycle": 33,
+        "osrmMeters": 8217,
+        "ptModes": "WALK + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 6394
+      },
+      "53.34511,-6.26468": {
+        "pt": 42,
+        "walk": 95,
+        "cycle": 30,
+        "osrmMeters": 7613,
+        "ptModes": "WALK + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 5688
+      }
+    },
+    "finglas": {
+      "53.34292,-6.29946": {
+        "pt": 56,
+        "walk": 97,
+        "cycle": 31,
+        "osrmMeters": 7736,
+        "ptModes": "WALK + BUS + TRAM",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 5145
+      },
+      "53.29293,-6.13178": {
+        "pt": 70,
+        "walk": 228,
+        "cycle": 73,
+        "osrmMeters": 18273,
+        "ptModes": "WALK + BUS + RAIL",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 15321
+      },
+      "53.39625,-6.21197": {
+        "pt": 54,
+        "walk": 96,
+        "cycle": 31,
+        "osrmMeters": 7695,
+        "ptModes": "WALK + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 5689
+      },
+      "53.34027,-6.26134": {
+        "pt": 43,
+        "walk": 106,
+        "cycle": 34,
+        "osrmMeters": 8458,
+        "ptModes": "WALK + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 5928
+      },
+      "53.34997,-6.26465": {
+        "pt": 29,
+        "walk": 76,
+        "cycle": 24,
+        "osrmMeters": 6091,
+        "ptModes": "WALK + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 4857
+      },
+      "53.35435,-6.26415": {
+        "pt": 27,
+        "walk": 79,
+        "cycle": 25,
+        "osrmMeters": 6304,
+        "ptModes": "WALK + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 4441
+      },
+      "53.32073,-6.30854": {
+        "pt": 68,
+        "walk": 134,
+        "cycle": 43,
+        "osrmMeters": 10703,
+        "ptModes": "WALK + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 7648
+      },
+      "53.28808,-6.37312": {
+        "pt": 78,
+        "walk": 239,
+        "cycle": 76,
+        "osrmMeters": 19081,
+        "ptModes": "WALK + BUS + TRAM",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 12326
+      },
+      "53.34222,-6.23920": {
+        "pt": 50,
+        "walk": 93,
+        "cycle": 30,
+        "osrmMeters": 7477,
+        "ptModes": "WALK + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 6475
+      },
+      "53.34109,-6.26281": {
+        "pt": 43,
+        "walk": 93,
+        "cycle": 30,
+        "osrmMeters": 7455,
+        "ptModes": "WALK + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 5806
+      },
+      "53.35313,-6.25494": {
+        "pt": 28,
+        "walk": 71,
+        "cycle": 23,
+        "osrmMeters": 5669,
+        "ptModes": "WALK + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 4881
+      },
+      "53.35911,-6.24235": {
+        "pt": 48,
+        "walk": 78,
+        "cycle": 25,
+        "osrmMeters": 6248,
+        "ptModes": "WALK + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 4928
+      },
+      "53.39582,-6.26291": {
+        "pt": 26,
+        "walk": 45,
+        "cycle": 14,
+        "osrmMeters": 3602,
+        "ptModes": "WALK + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 2375
+      },
+      "53.35419,-6.26276": {
+        "pt": 27,
+        "walk": 70,
+        "cycle": 22,
+        "osrmMeters": 5578,
+        "ptModes": "WALK + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 4502
+      },
+      "53.34563,-6.26361": {
+        "pt": 38,
+        "walk": 89,
+        "cycle": 29,
+        "osrmMeters": 7145,
+        "ptModes": "WALK + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 5322
+      },
+      "53.52186,-6.10195": {
+        "pt": 88,
+        "walk": 330,
+        "cycle": 106,
+        "osrmMeters": 26436,
+        "ptModes": "WALK + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 19606
+      },
+      "53.39076,-6.39123": {
+        "pt": 43,
+        "walk": 111,
+        "cycle": 35,
+        "osrmMeters": 8874,
+        "ptModes": "WALK + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 6255
+      },
+      "53.34412,-6.28332": {
+        "pt": 50,
+        "walk": 84,
+        "cycle": 27,
+        "osrmMeters": 6710,
+        "ptModes": "WALK + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 5089
+      },
+      "53.34112,-6.25450": {
+        "pt": 37,
+        "walk": 110,
+        "cycle": 35,
+        "osrmMeters": 8831,
+        "ptModes": "WALK + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 6039
+      },
+      "53.35716,-6.24607": {
+        "pt": 35,
+        "walk": 72,
+        "cycle": 23,
+        "osrmMeters": 5788,
+        "ptModes": "WALK + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 4905
+      },
+      "53.33879,-6.25006": {
+        "pt": 44,
+        "walk": 95,
+        "cycle": 31,
+        "osrmMeters": 7630,
+        "ptModes": "WALK + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 6407
+      },
+      "53.34511,-6.26468": {
+        "pt": 38,
+        "walk": 86,
+        "cycle": 27,
+        "osrmMeters": 6873,
+        "ptModes": "WALK + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 5346
+      }
+    },
+    "dun-laoghaire": {
+      "53.34292,-6.29946": {
+        "pt": 59,
+        "walk": 190,
+        "cycle": 61,
+        "osrmMeters": 15174,
+        "ptModes": "WALK + RAIL + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 12231
+      },
+      "53.29293,-6.13178": {
+        "pt": 6,
+        "walk": 7,
+        "cycle": 2,
+        "osrmMeters": 572,
+        "ptModes": "WALK",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 290
+      },
+      "53.39625,-6.21197": {
+        "pt": 71,
+        "walk": 227,
+        "cycle": 73,
+        "osrmMeters": 18149,
+        "ptModes": "WALK + RAIL + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 12613
+      },
+      "53.34027,-6.26134": {
+        "pt": 45,
+        "walk": 149,
+        "cycle": 48,
+        "osrmMeters": 11943,
+        "ptModes": "WALK + RAIL",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 9889
+      },
+      "53.34997,-6.26465": {
+        "pt": 42,
+        "walk": 166,
+        "cycle": 53,
+        "osrmMeters": 13264,
+        "ptModes": "WALK + RAIL",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 10684
+      },
+      "53.35435,-6.26415": {
+        "pt": 50,
+        "walk": 167,
+        "cycle": 53,
+        "osrmMeters": 13337,
+        "ptModes": "WALK + RAIL + TRAM",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 10957
+      },
+      "53.32073,-6.30854": {
+        "pt": 69,
+        "walk": 192,
+        "cycle": 61,
+        "osrmMeters": 15336,
+        "ptModes": "WALK + RAIL + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 11892
+      },
+      "53.28808,-6.37312": {
+        "pt": 70,
+        "walk": 249,
+        "cycle": 80,
+        "osrmMeters": 19913,
+        "ptModes": "WALK + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 15768
+      },
+      "53.34222,-6.23920": {
+        "pt": 32,
+        "walk": 132,
+        "cycle": 42,
+        "osrmMeters": 10566,
+        "ptModes": "WALK + RAIL",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 8822
+      },
+      "53.34109,-6.26281": {
+        "pt": 47,
+        "walk": 163,
+        "cycle": 52,
+        "osrmMeters": 13020,
+        "ptModes": "WALK + RAIL + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 10020
+      },
+      "53.35313,-6.25494": {
+        "pt": 40,
+        "walk": 155,
+        "cycle": 50,
+        "osrmMeters": 12415,
+        "ptModes": "WALK + RAIL",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 10401
+      },
+      "53.35911,-6.24235": {
+        "pt": 49,
+        "walk": 166,
+        "cycle": 53,
+        "osrmMeters": 13259,
+        "ptModes": "WALK + RAIL + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 10252
+      },
+      "53.39582,-6.26291": {
+        "pt": 73,
+        "walk": 284,
+        "cycle": 91,
+        "osrmMeters": 22681,
+        "ptModes": "WALK + RAIL + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 14266
+      },
+      "53.35419,-6.26276": {
+        "pt": 45,
+        "walk": 166,
+        "cycle": 53,
+        "osrmMeters": 13258,
+        "ptModes": "WALK + RAIL",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 10875
+      },
+      "53.34563,-6.26361": {
+        "pt": 38,
+        "walk": 164,
+        "cycle": 52,
+        "osrmMeters": 13103,
+        "ptModes": "WALK + RAIL",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 10345
+      },
+      "53.52186,-6.10195": {
+        "pt": 84,
+        "walk": 467,
+        "cycle": 149,
+        "osrmMeters": 37343,
+        "ptModes": "WALK + RAIL + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 25628
+      },
+      "53.39076,-6.39123": {
+        "pt": 82,
+        "walk": 383,
+        "cycle": 123,
+        "osrmMeters": 30629,
+        "ptModes": "WALK + RAIL + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 20175
+      },
+      "53.34412,-6.28332": {
+        "pt": 53,
+        "walk": 176,
+        "cycle": 56,
+        "osrmMeters": 14062,
+        "ptModes": "WALK + RAIL + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 11357
+      },
+      "53.34112,-6.25450": {
+        "pt": 37,
+        "walk": 154,
+        "cycle": 49,
+        "osrmMeters": 12315,
+        "ptModes": "WALK + RAIL",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 9563
+      },
+      "53.35716,-6.24607": {
+        "pt": 45,
+        "walk": 155,
+        "cycle": 49,
+        "osrmMeters": 12374,
+        "ptModes": "WALK + RAIL",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 10270
+      },
+      "53.33879,-6.25006": {
+        "pt": 37,
+        "walk": 131,
+        "cycle": 42,
+        "osrmMeters": 10492,
+        "ptModes": "WALK + RAIL",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 9174
+      },
+      "53.34511,-6.26468": {
+        "pt": 40,
+        "walk": 173,
+        "cycle": 55,
+        "osrmMeters": 13855,
+        "ptModes": "WALK + RAIL",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 10371
+      }
+    },
+    "swords": {
+      "53.34292,-6.29946": {
+        "pt": 67,
+        "walk": 211,
+        "cycle": 67,
+        "osrmMeters": 16851,
+        "ptModes": "WALK + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 14012
+      },
+      "53.29293,-6.13178": {
+        "pt": 73,
+        "walk": 327,
+        "cycle": 105,
+        "osrmMeters": 26127,
+        "ptModes": "WALK + BUS + RAIL",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 19405
+      },
+      "53.39625,-6.21197": {
+        "pt": 51,
+        "walk": 130,
+        "cycle": 41,
+        "osrmMeters": 10365,
+        "ptModes": "WALK + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 7047
+      },
+      "53.34027,-6.26134": {
+        "pt": 50,
+        "walk": 241,
+        "cycle": 77,
+        "osrmMeters": 19267,
+        "ptModes": "WALK + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 13547
+      },
+      "53.34997,-6.26465": {
+        "pt": 52,
+        "walk": 179,
+        "cycle": 57,
+        "osrmMeters": 14336,
+        "ptModes": "WALK + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 12545
+      },
+      "53.35435,-6.26415": {
+        "pt": 53,
+        "walk": 181,
+        "cycle": 58,
+        "osrmMeters": 14477,
+        "ptModes": "WALK + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 12065
+      },
+      "53.32073,-6.30854": {
+        "pt": 77,
+        "walk": 248,
+        "cycle": 79,
+        "osrmMeters": 19819,
+        "ptModes": "WALK + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 16527
+      },
+      "53.28808,-6.37312": {
+        "pt": 74,
+        "walk": 370,
+        "cycle": 118,
+        "osrmMeters": 29570,
+        "ptModes": "WALK + BUS + TRAM",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 21622
+      },
+      "53.34222,-6.23920": {
+        "pt": 43,
+        "walk": 211,
+        "cycle": 67,
+        "osrmMeters": 16871,
+        "ptModes": "WALK + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 13106
+      },
+      "53.34109,-6.26281": {
+        "pt": 53,
+        "walk": 207,
+        "cycle": 66,
+        "osrmMeters": 16570,
+        "ptModes": "WALK + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 13479
+      },
+      "53.35313,-6.25494": {
+        "pt": 46,
+        "walk": 173,
+        "cycle": 55,
+        "osrmMeters": 13841,
+        "ptModes": "WALK + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 12061
+      },
+      "53.35911,-6.24235": {
+        "pt": 53,
+        "walk": 170,
+        "cycle": 54,
+        "osrmMeters": 13594,
+        "ptModes": "WALK + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 11265
+      },
+      "53.39582,-6.26291": {
+        "pt": 46,
+        "walk": 136,
+        "cycle": 44,
+        "osrmMeters": 10913,
+        "ptModes": "WALK + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 7649
+      },
+      "53.35419,-6.26276": {
+        "pt": 54,
+        "walk": 172,
+        "cycle": 55,
+        "osrmMeters": 13750,
+        "ptModes": "WALK + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 12059
+      },
+      "53.34563,-6.26361": {
+        "pt": 43,
+        "walk": 203,
+        "cycle": 65,
+        "osrmMeters": 16260,
+        "ptModes": "WALK + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 12998
+      },
+      "53.52186,-6.10195": {
+        "pt": 26,
+        "walk": 168,
+        "cycle": 54,
+        "osrmMeters": 13406,
+        "ptModes": "WALK + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 10405
+      },
+      "53.39076,-6.39123": {
+        "pt": 97,
+        "walk": 242,
+        "cycle": 77,
+        "osrmMeters": 19364,
+        "ptModes": "WALK + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 13724
+      },
+      "53.34412,-6.28332": {
+        "pt": 61,
+        "walk": 198,
+        "cycle": 63,
+        "osrmMeters": 15826,
+        "ptModes": "WALK + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 13513
+      },
+      "53.34112,-6.25450": {
+        "pt": 53,
+        "walk": 245,
+        "cycle": 79,
+        "osrmMeters": 19640,
+        "ptModes": "WALK + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 13367
+      },
+      "53.35716,-6.24607": {
+        "pt": 54,
+        "walk": 173,
+        "cycle": 55,
+        "osrmMeters": 13834,
+        "ptModes": "WALK + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 11516
+      },
+      "53.33879,-6.25006": {
+        "pt": 48,
+        "walk": 221,
+        "cycle": 71,
+        "osrmMeters": 17719,
+        "ptModes": "WALK + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 13575
+      },
+      "53.34511,-6.26468": {
+        "pt": 45,
+        "walk": 200,
+        "cycle": 64,
+        "osrmMeters": 15989,
+        "ptModes": "WALK + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 13070
+      }
+    },
+    "lucan": {
+      "53.34292,-6.29946": {
+        "pt": 36,
+        "walk": 150,
+        "cycle": 48,
+        "osrmMeters": 12000,
+        "ptModes": "WALK + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 10119
+      },
+      "53.29293,-6.13178": {
+        "pt": 85,
+        "walk": 389,
+        "cycle": 124,
+        "osrmMeters": 31086,
+        "ptModes": "WALK + BUS + RAIL",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 22302
+      },
+      "53.39625,-6.21197": {
+        "pt": 84,
+        "walk": 266,
+        "cycle": 85,
+        "osrmMeters": 21256,
+        "ptModes": "WALK + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 16400
+      },
+      "53.34027,-6.26134": {
+        "pt": 54,
+        "walk": 200,
+        "cycle": 64,
+        "osrmMeters": 16004,
+        "ptModes": "WALK + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 12665
+      },
+      "53.34997,-6.26465": {
+        "pt": 47,
+        "walk": 183,
+        "cycle": 59,
+        "osrmMeters": 14655,
+        "ptModes": "WALK + BUS + TRAM",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 12335
+      },
+      "53.35435,-6.26415": {
+        "pt": 56,
+        "walk": 189,
+        "cycle": 61,
+        "osrmMeters": 15132,
+        "ptModes": "WALK + BUS + TRAM",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 12347
+      },
+      "53.32073,-6.30854": {
+        "pt": 66,
+        "walk": 188,
+        "cycle": 60,
+        "osrmMeters": 15065,
+        "ptModes": "WALK + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 10218
+      },
+      "53.28808,-6.37312": {
+        "pt": 61,
+        "walk": 189,
+        "cycle": 60,
+        "osrmMeters": 15085,
+        "ptModes": "WALK + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 9188
+      },
+      "53.34222,-6.23920": {
+        "pt": 57,
+        "walk": 220,
+        "cycle": 70,
+        "osrmMeters": 17595,
+        "ptModes": "WALK + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 14095
+      },
+      "53.34109,-6.26281": {
+        "pt": 51,
+        "walk": 188,
+        "cycle": 60,
+        "osrmMeters": 15000,
+        "ptModes": "WALK + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 12556
+      },
+      "53.35313,-6.25494": {
+        "pt": 54,
+        "walk": 202,
+        "cycle": 65,
+        "osrmMeters": 16187,
+        "ptModes": "WALK + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 12962
+      },
+      "53.35911,-6.24235": {
+        "pt": 66,
+        "walk": 213,
+        "cycle": 68,
+        "osrmMeters": 17054,
+        "ptModes": "WALK + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 13793
+      },
+      "53.39582,-6.26291": {
+        "pt": 82,
+        "walk": 219,
+        "cycle": 70,
+        "osrmMeters": 17529,
+        "ptModes": "WALK + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 13160
+      },
+      "53.35419,-6.26276": {
+        "pt": 54,
+        "walk": 190,
+        "cycle": 61,
+        "osrmMeters": 15203,
+        "ptModes": "WALK + BUS + TRAM",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 12440
+      },
+      "53.34563,-6.26361": {
+        "pt": 44,
+        "walk": 184,
+        "cycle": 59,
+        "osrmMeters": 14690,
+        "ptModes": "WALK + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 12443
+      },
+      "53.52186,-6.10195": {
+        "pt": 108,
+        "walk": 459,
+        "cycle": 147,
+        "osrmMeters": 36759,
+        "ptModes": "WALK + BUS + RAIL",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 29481
+      },
+      "53.39076,-6.39123": {
+        "pt": 35,
+        "walk": 136,
+        "cycle": 43,
+        "osrmMeters": 10870,
+        "ptModes": "WALK + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 5441
+      },
+      "53.34412,-6.28332": {
+        "pt": 35,
+        "walk": 166,
+        "cycle": 53,
+        "osrmMeters": 13246,
+        "ptModes": "WALK + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 11161
+      },
+      "53.34112,-6.25450": {
+        "pt": 58,
+        "walk": 205,
+        "cycle": 66,
+        "osrmMeters": 16376,
+        "ptModes": "WALK + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 13102
+      },
+      "53.35716,-6.24607": {
+        "pt": 59,
+        "walk": 205,
+        "cycle": 66,
+        "osrmMeters": 16411,
+        "ptModes": "WALK + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 13544
+      },
+      "53.33879,-6.25006": {
+        "pt": 62,
+        "walk": 209,
+        "cycle": 67,
+        "osrmMeters": 16724,
+        "ptModes": "WALK + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 13430
+      },
+      "53.34511,-6.26468": {
+        "pt": 43,
+        "walk": 180,
+        "cycle": 58,
+        "osrmMeters": 14418,
+        "ptModes": "WALK + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 12378
+      }
+    },
+    "rathmines": {
+      "53.34292,-6.29946": {
+        "pt": 42,
+        "walk": 54,
+        "cycle": 17,
+        "osrmMeters": 4300,
+        "ptModes": "WALK + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 2933
+      },
+      "53.29293,-6.13178": {
+        "pt": 53,
+        "walk": 163,
+        "cycle": 52,
+        "osrmMeters": 13068,
+        "ptModes": "WALK + BUS + RAIL",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 9598
+      },
+      "53.39625,-6.21197": {
+        "pt": 61,
+        "walk": 144,
+        "cycle": 46,
+        "osrmMeters": 11533,
+        "ptModes": "WALK + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 8511
+      },
+      "53.34027,-6.26134": {
+        "pt": 18,
+        "walk": 30,
+        "cycle": 10,
+        "osrmMeters": 2402,
+        "ptModes": "WALK + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 1546
+      },
+      "53.34997,-6.26465": {
+        "pt": 28,
+        "walk": 47,
+        "cycle": 15,
+        "osrmMeters": 3794,
+        "ptModes": "WALK + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 2607
+      },
+      "53.35435,-6.26415": {
+        "pt": 31,
+        "walk": 53,
+        "cycle": 17,
+        "osrmMeters": 4270,
+        "ptModes": "WALK + TRAM",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 3094
+      },
+      "53.32073,-6.30854": {
+        "pt": 18,
+        "walk": 53,
+        "cycle": 17,
+        "osrmMeters": 4204,
+        "ptModes": "WALK + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 2972
+      },
+      "53.28808,-6.37312": {
+        "pt": 49,
+        "walk": 127,
+        "cycle": 41,
+        "osrmMeters": 10152,
+        "ptModes": "WALK + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 8367
+      },
+      "53.34222,-6.23920": {
+        "pt": 28,
+        "walk": 41,
+        "cycle": 13,
+        "osrmMeters": 3247,
+        "ptModes": "WALK + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 2440
+      },
+      "53.34109,-6.26281": {
+        "pt": 17,
+        "walk": 30,
+        "cycle": 10,
+        "osrmMeters": 2395,
+        "ptModes": "WALK + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 1626
+      },
+      "53.35313,-6.25494": {
+        "pt": 32,
+        "walk": 56,
+        "cycle": 18,
+        "osrmMeters": 4512,
+        "ptModes": "WALK + TRAM",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 3031
+      },
+      "53.35911,-6.24235": {
+        "pt": 34,
+        "walk": 69,
+        "cycle": 22,
+        "osrmMeters": 5511,
+        "ptModes": "WALK + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 3920
+      },
+      "53.39582,-6.26291": {
+        "pt": 59,
+        "walk": 114,
+        "cycle": 36,
+        "osrmMeters": 9123,
+        "ptModes": "WALK + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 7707
+      },
+      "53.35419,-6.26276": {
+        "pt": 30,
+        "walk": 54,
+        "cycle": 17,
+        "osrmMeters": 4342,
+        "ptModes": "WALK + TRAM",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 3080
+      },
+      "53.34563,-6.26361": {
+        "pt": 18,
+        "walk": 31,
+        "cycle": 10,
+        "osrmMeters": 2479,
+        "ptModes": "WALK + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 2127
+      },
+      "53.52186,-6.10195": {
+        "pt": null,
+        "walk": 368,
+        "cycle": 118,
+        "osrmMeters": 29443,
+        "ptModes": null,
+        "ptNote": "TFI failed: TFI planJourney HTTP 504: {'errorType': 'TIMEOUT_EXCEEDED'}",
+        "nearSkip": false,
+        "straightLineMeters": 24255
+      },
+      "53.39076,-6.39123": {
+        "pt": 71,
+        "walk": 198,
+        "cycle": 63,
+        "osrmMeters": 15822,
+        "ptModes": "WALK + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 11016
+      },
+      "53.34412,-6.28332": {
+        "pt": 36,
+        "walk": 40,
+        "cycle": 13,
+        "osrmMeters": 3189,
+        "ptModes": "WALK + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 2310
+      },
+      "53.34112,-6.25450": {
+        "pt": 23,
+        "walk": 35,
+        "cycle": 11,
+        "osrmMeters": 2775,
+        "ptModes": "WALK + TRAM",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 1764
+      },
+      "53.35716,-6.24607": {
+        "pt": 35,
+        "walk": 63,
+        "cycle": 20,
+        "osrmMeters": 5000,
+        "ptModes": "WALK + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 3628
+      },
+      "53.33879,-6.25006": {
+        "pt": 22,
+        "walk": 30,
+        "cycle": 10,
+        "osrmMeters": 2375,
+        "ptModes": "WALK + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 1681
+      },
+      "53.34511,-6.26468": {
+        "pt": 18,
+        "walk": 37,
+        "cycle": 12,
+        "osrmMeters": 2982,
+        "ptModes": "WALK + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 2068
+      }
+    },
+    "balbriggan": {
+      "53.34292,-6.29946": {
+        "pt": 76,
+        "walk": 437,
+        "cycle": 140,
+        "osrmMeters": 34997,
+        "ptModes": "WALK + RAIL + TRAM",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 30895
+      },
+      "53.29293,-6.13178": {
+        "pt": 82,
+        "walk": 553,
+        "cycle": 177,
+        "osrmMeters": 44273,
+        "ptModes": "WALK + RAIL",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 35622
+      },
+      "53.39625,-6.21197": {
+        "pt": 65,
+        "walk": 356,
+        "cycle": 114,
+        "osrmMeters": 28510,
+        "ptModes": "WALK + RAIL + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 24056
+      },
+      "53.34027,-6.26134": {
+        "pt": 73,
+        "walk": 468,
+        "cycle": 150,
+        "osrmMeters": 37413,
+        "ptModes": "WALK + RAIL + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 30651
+      },
+      "53.34997,-6.26465": {
+        "pt": 62,
+        "walk": 406,
+        "cycle": 130,
+        "osrmMeters": 32482,
+        "ptModes": "WALK + RAIL",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 29628
+      },
+      "53.35435,-6.26415": {
+        "pt": 68,
+        "walk": 408,
+        "cycle": 130,
+        "osrmMeters": 32623,
+        "ptModes": "WALK + RAIL + TRAM",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 29143
+      },
+      "53.32073,-6.30854": {
+        "pt": 90,
+        "walk": 475,
+        "cycle": 152,
+        "osrmMeters": 37965,
+        "ptModes": "WALK + RAIL + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 33434
+      },
+      "53.28808,-6.37312": {
+        "pt": 98,
+        "walk": 596,
+        "cycle": 191,
+        "osrmMeters": 47716,
+        "ptModes": "WALK + RAIL + TRAM",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 38157
+      },
+      "53.34222,-6.23920": {
+        "pt": 59,
+        "walk": 438,
+        "cycle": 140,
+        "osrmMeters": 35017,
+        "ptModes": "WALK + RAIL",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 30219
+      },
+      "53.34109,-6.26281": {
+        "pt": 70,
+        "walk": 434,
+        "cycle": 139,
+        "osrmMeters": 34716,
+        "ptModes": "WALK + RAIL + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 30578
+      },
+      "53.35313,-6.25494": {
+        "pt": 52,
+        "walk": 400,
+        "cycle": 128,
+        "osrmMeters": 31987,
+        "ptModes": "WALK + RAIL",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 29170
+      },
+      "53.35911,-6.24235": {
+        "pt": 63,
+        "walk": 397,
+        "cycle": 127,
+        "osrmMeters": 31740,
+        "ptModes": "WALK + RAIL + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 28385
+      },
+      "53.39582,-6.26291": {
+        "pt": 88,
+        "walk": 363,
+        "cycle": 116,
+        "osrmMeters": 29059,
+        "ptModes": "WALK + RAIL + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 24608
+      },
+      "53.35419,-6.26276": {
+        "pt": 66,
+        "walk": 399,
+        "cycle": 128,
+        "osrmMeters": 31896,
+        "ptModes": "WALK + RAIL + TRAM",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 29144
+      },
+      "53.34563,-6.26361": {
+        "pt": 64,
+        "walk": 430,
+        "cycle": 138,
+        "osrmMeters": 34406,
+        "ptModes": "WALK + RAIL",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 30090
+      },
+      "53.52186,-6.10195": {
+        "pt": 41,
+        "walk": 192,
+        "cycle": 61,
+        "osrmMeters": 15355,
+        "ptModes": "WALK + RAIL + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 11330
+      },
+      "53.39076,-6.39123": {
+        "pt": 110,
+        "walk": 469,
+        "cycle": 150,
+        "osrmMeters": 37510,
+        "ptModes": "WALK + RAIL + BUS",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 28204
+      },
+      "53.34412,-6.28332": {
+        "pt": 71,
+        "walk": 425,
+        "cycle": 136,
+        "osrmMeters": 33971,
+        "ptModes": "WALK + RAIL + TRAM",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 30514
+      },
+      "53.34112,-6.25450": {
+        "pt": 60,
+        "walk": 472,
+        "cycle": 151,
+        "osrmMeters": 37786,
+        "ptModes": "WALK + RAIL",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 30483
+      },
+      "53.35716,-6.24607": {
+        "pt": 57,
+        "walk": 400,
+        "cycle": 128,
+        "osrmMeters": 31980,
+        "ptModes": "WALK + RAIL",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 28636
+      },
+      "53.33879,-6.25006": {
+        "pt": 61,
+        "walk": 448,
+        "cycle": 143,
+        "osrmMeters": 35865,
+        "ptModes": "WALK + RAIL",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 30695
+      },
+      "53.34511,-6.26468": {
+        "pt": 65,
+        "walk": 427,
+        "cycle": 137,
+        "osrmMeters": 34134,
+        "ptModes": "WALK + RAIL + TRAM",
+        "ptNote": "TFI Journey Planner, LEAVE_AFTER 2026-11-12T08:30:00, FASTEST, WALK+BUS+TRAM+RAIL+COACH+FERRY.",
+        "nearSkip": false,
+        "straightLineMeters": 30159
+      }
+    }
+  },
+  "failures": [
+    {
+      "origin": "rathmines",
+      "dest": "53.52186,-6.10195",
+      "error": "TFI planJourney HTTP 504: {'errorType': 'TIMEOUT_EXCEEDED'}"
+    }
+  ]
+}

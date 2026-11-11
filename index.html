@@ -1,316 +1,183 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>都柏林機會地圖集 Dublin Opportunity Atlas</title>
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
-<style>
-  :root { --bg:#f3efe6; --ink:#1a1714; --muted:#5c5348; --card:#fffaf2; --line:#d7cfc0; --teal:#0e4b4b; --event:#1c4b82; --training:#1f6b43; --job:#b45a12; --origin:#b42318; }
-  * { box-sizing: border-box; }
-  body { margin:0; font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei","Noto Sans",system-ui,sans-serif; background:var(--bg); color:var(--ink); }
-  header { padding:24px 24px 16px; border-bottom:2px solid var(--teal); display:flex; justify-content:space-between; gap:24px; align-items:flex-end; }
-  header h1 { margin:4px 0 0; font-size:28px; }
-  header .kicker { font-size:12px; letter-spacing:.16em; color:var(--teal); font-weight:700; }
-  header .sub { font-size:14px; color:var(--muted); }
-  header .intro { max-width:360px; text-align:right; font-size:12px; color:var(--muted); line-height:1.5; }
-  main { padding:18px 24px 40px; }
-  .kpis { display:grid; grid-template-columns:repeat(6,minmax(0,1fr)); gap:10px; margin-bottom:16px; }
-  .tile { background:var(--card); border:1px solid var(--line); border-radius:10px; padding:12px 14px; }
-  .tile .l { font-size:11px; color:var(--muted); letter-spacing:.06em; }
-  .tile .v { font-size:22px; font-weight:700; margin-top:4px; color:var(--teal); }
-  .panel { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:14px; margin-bottom:16px; }
-  .filters { display:grid; gap:10px; font-size:12px; }
-  .row { display:flex; flex-wrap:wrap; gap:6px; align-items:center; }
-  .lab { width:86px; color:var(--muted); flex:0 0 86px; }
-  .chip { border:1px solid var(--line); background:var(--card); color:var(--ink); border-radius:999px; padding:3px 10px; font-size:12px; cursor:pointer; font-family:inherit; }
-  .chip.on { background:var(--teal); color:var(--card); border-color:var(--teal); }
-  .grid2 { display:grid; grid-template-columns:1.15fr .85fr; gap:14px; margin-bottom:16px; }
-  #map { height:420px; border-radius:10px; border:1px solid var(--line); }
-  table { width:100%; border-collapse:collapse; font-size:12px; }
-  th { text-align:left; font-size:11px; letter-spacing:.04em; color:var(--muted); padding:8px; border-bottom:1px solid var(--line); cursor:pointer; white-space:nowrap; background:#f3efe6; position:sticky; top:0; }
-  td { padding:7px 8px; border-bottom:1px solid #ece6db; }
-  tr.sel { background:#e8efe8; }
-  tr { cursor:pointer; }
-  a { color:var(--teal); }
-  footer { font-size:12px; color:var(--muted); line-height:1.65; padding:4px 2px 24px; }
-  .legend { display:flex; gap:14px; margin-top:8px; font-size:11px; color:var(--muted); flex-wrap:wrap; }
-  .dot { display:inline-block; width:8px; height:8px; border-radius:8px; margin-right:4px; }
-  .detail h2 { margin:2px 0 6px; font-size:18px; }
-  #chart { width:100%; height:340px; }
-  @media (max-width:900px){ .kpis,.grid2{grid-template-columns:1fr 1fr;} header{flex-direction:column;align-items:flex-start;} header .intro{text-align:left;} }
-</style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="favicon.png" />
+  <title>都柏林機會地圖集 Dublin Opportunity Atlas</title>
+  <meta name="description" content="Interactive atlas of verified Dublin creative-industry events, training and entry-level jobs, with personal match scores and area equity insights." />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="vendor/leaflet/leaflet.css" />
+  <link rel="stylesheet" href="vendor/leaflet/MarkerCluster.css" />
+  <link rel="stylesheet" href="vendor/leaflet/MarkerCluster.Default.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;600;700&family=Noto+Sans+TC:wght@400;500;600;700&family=Noto+Serif+TC:wght@600&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
 </head>
 <body>
-<header>
-  <div>
-    <div class="kicker">都柏林創意行業證據地圖</div>
-    <h1>都柏林機會地圖集</h1>
-    <div class="sub">Dublin Opportunity Atlas · 出發點：O'Connell Bridge · OpenStreetMap 街道底圖</div>
-  </div>
-  <div class="intro">求職者能否公平接觸創意活動、職業訓練與入門工作？資料核對日期：2026 年 11 月 11 日（Europe/Dublin）。標題保留英文原文。此為可本機開啟的完整後備頁，含 Leaflet 街道地圖。</div>
-</header>
-<main>
-  <section class="kpis" id="kpis"></section>
-  <section class="panel">
-    <div class="row" style="justify-content:space-between;margin-bottom:8px">
-      <strong>篩選</strong>
-      <div><span id="count" style="color:var(--teal);font-size:12px"></span>
-        <button class="chip" id="reset" type="button">重設</button></div>
-    </div>
-    <div class="filters">
-      <div class="row" id="f-cat"><span class="lab">類別</span></div>
-      <div class="row" id="f-band"><span class="lab">費用區間</span></div>
-      <div class="row" id="f-skill"><span class="lab">技能類型</span></div>
-      <div class="row" id="f-format"><span class="lab">形式</span></div>
-      <div class="row" id="f-mode"><span class="lab">交通方式</span></div>
-      <div class="row">
-        <label><input type="checkbox" id="exMw"> 排除週一至週三白天（09:00–17:00）衝突</label>
-        <label><input type="checkbox" id="onlyEv"> 僅顯示晚間／週末／線上可行</label>
-        <label><input type="checkbox" id="openDl" checked> 報名截止日尚未過（以 2026-11-11 計；未載明者仍顯示）</label>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="brand">
+        <div class="brand-kicker" data-i18n="kicker">Dublin Opportunity Atlas</div>
+        <p class="brand-title" data-i18n="title">都柏林機會地圖集</p>
+        <div class="brand-sub" data-i18n="checked">資料核對：2026-11-11（Europe/Dublin）</div>
+      </div>
+      <nav class="nav-links" aria-label="sections">
+        <a href="#picks" data-i18n="navPicks">精選</a>
+        <a href="#map-section" data-i18n="navMap">地圖</a>
+        <a href="#equity" data-i18n="navEquity">公平洞察</a>
+        <a href="#calendar" data-i18n="navCal">行事曆</a>
+        <a href="#shortlist" data-i18n="navShort">短名單</a>
+        <a href="#method" data-i18n="navMethod">方法</a>
+      </nav>
+      <div class="header-actions">
+        <div class="lang-toggle" role="group" aria-label="Language">
+          <button type="button" id="lang-zh" aria-pressed="true">中文</button>
+          <button type="button" id="lang-en" aria-pressed="false">EN</button>
+        </div>
+        <button class="btn" id="btn-share" type="button" data-i18n="share">分享設定</button>
+        <button class="btn" id="btn-short-count" type="button">★ 0</button>
+        <button class="btn primary" id="btn-profile" type="button" data-i18n="myProfile">我的設定</button>
       </div>
     </div>
-  </section>
-  <section class="grid2">
-    <div class="panel">
-      <div style="display:flex;justify-content:space-between;margin-bottom:8px">
-        <strong>地圖：自 O'Connell Bridge 出發</strong>
-        <span style="font-size:11px;color:var(--muted)">OpenStreetMap 圖磚 · 紅色為起點 · © OpenStreetMap contributors</span>
+  </header>
+
+  <main id="main" class="wrap">
+    <div class="hero">
+      <div class="hero-copy">
+        <h1 data-i18n="heroTitle">從你所在的地方，看清能去的機會。</h1>
+        <p class="lede" data-i18n="heroLede">這是一份以官方來源核實的都柏林創意產業活動、職業訓練與入門職缺地圖。設定住家、通勤與空檔後，系統會依透明公式計算個人媒合分數，並比較各區可達性——數字皆來自資料，不會臆造機會。</p>
+        <div class="kpis" id="kpi-row"></div>
       </div>
-      <div id="map"></div>
-      <div class="legend">
-        <span><span class="dot" style="background:var(--event)"></span>活動</span>
-        <span><span class="dot" style="background:var(--training)"></span>訓練</span>
-        <span><span class="dot" style="background:var(--job)"></span>職缺</span>
-        <span id="unmapped"></span>
+      <aside class="profile-card panel" id="profile-summary">
+        <h2 data-i18n="yourSetup">你的設定</h2>
+        <p class="lede" id="profile-blurb" style="font-size:14px"></p>
+        <div class="profile-meta" id="profile-chips"></div>
+        <div class="row-actions">
+          <button class="btn primary" id="btn-edit-profile" type="button" data-i18n="editProfile">編輯設定</button>
+          <button class="btn" id="btn-share-2" type="button" data-i18n="copyLink">複製分享連結</button>
+        </div>
+      </aside>
+    </div>
+
+    <section class="block" id="picks">
+      <div class="section-head">
+        <div>
+          <h2 data-i18n="topPicks">為你精選</h2>
+          <p data-i18n="topPicksSub">依媒合分數排序。每張卡片都會說明「為什麼適合你」。</p>
+        </div>
+        <label class="chip plain"><input type="checkbox" id="only-skills" /> <span data-i18n="onlySkills">只看感興趣的技能</span></label>
       </div>
-    </div>
-    <div class="panel">
-      <strong>費用 × 時間約束</strong>
-      <div style="font-size:11px;color:var(--muted);margin:4px 0 8px">職缺不繪製。空心圓為費用未載明（置於 €0 參考線）。Y 軸為歐元標價費用。</div>
-      <svg id="chart" viewBox="0 0 640 340" role="img" aria-label="費用與時間約束散佈圖"></svg>
-      <div id="chartTip" style="font-size:12px;min-height:36px"></div>
-    </div>
-  </section>
-  <section class="panel" id="detail" style="display:none"></section>
-  <section class="panel" style="overflow:hidden;padding:0">
-    <div style="padding:12px 14px;border-bottom:1px solid var(--line);font-size:13px"><strong>可排序清單</strong><span style="color:var(--muted)"> · 點欄位標題排序 · 標題為英文原文</span></div>
-    <div style="overflow:auto;max-height:520px">
-      <table><thead><tr id="thead"></tr></thead><tbody id="tbody"></tbody></table>
-    </div>
-  </section>
+      <div class="picks" id="picks-grid"></div>
+    </section>
+
+    <section class="block" id="map-section">
+      <div class="section-head">
+        <div>
+          <h2 data-i18n="mapTitle">地圖與清單</h2>
+          <p data-i18n="mapSub">標記依可達性上色；叢集可縮放。點選地圖或清單會互相同步。環圈為示意距離，不是真正的交通等時圈。</p>
+        </div>
+      </div>
+      <div class="filters" id="filters"></div>
+      <div class="legend" id="map-legend"></div>
+      <div class="map-grid">
+        <div id="map" role="application" aria-label="Opportunity map"></div>
+        <div class="list-pane card" id="list-pane"></div>
+      </div>
+    </section>
+
+    <section class="block" id="equity">
+      <div class="section-head">
+        <div>
+          <h2 data-i18n="equityTitle">各區公平洞察</h2>
+          <p data-i18n="equitySub">以預設起點、平日上午 TFI 大眾運輸時間，比較 30／45／60 分鐘內可達的面對面機會。</p>
+        </div>
+      </div>
+      <div class="equity-grid">
+        <div class="chart-card card">
+          <canvas id="equity-chart" height="280"></canvas>
+        </div>
+        <div class="insight-card card">
+          <h3 data-i18n="insightsTitle">由資料生成的觀察</h3>
+          <ul id="insight-list"></ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" id="barriers">
+      <div class="section-head">
+        <div>
+          <h2 data-i18n="barriersTitle">目前設定下被排除的原因</h2>
+          <p data-i18n="barriersSub">以你的通勤上限、空檔、預算與截止日期，硬性篩掉的筆數（線上項目不受通勤限制）。</p>
+        </div>
+      </div>
+      <div class="barrier-card card">
+        <div class="barrier-bars" id="barrier-bars"></div>
+      </div>
+    </section>
+
+    <section class="block" id="calendar">
+      <div class="section-head">
+        <div>
+          <h2 data-i18n="calTitle">行事曆與截止日期</h2>
+          <p data-i18n="calSub">即將到來的場次與申請截止。三日內截止會標示「即將截止」。</p>
+        </div>
+        <div class="row-actions">
+          <button class="btn" id="btn-ics-short" type="button" data-i18n="icsAll">下載短名單全部 .ics</button>
+        </div>
+      </div>
+      <div class="cal-list" id="cal-list"></div>
+    </section>
+
+    <section class="block" id="shortlist">
+      <div class="section-head">
+        <div>
+          <h2 data-i18n="shortTitle">短名單與個人計畫</h2>
+          <p data-i18n="shortSub">為機會按星號收藏。可匯出 CSV，或列印一份只含短名單的計畫。</p>
+        </div>
+        <div class="row-actions">
+          <button class="btn" id="btn-csv" type="button" data-i18n="exportCsv">匯出 CSV</button>
+          <button class="btn primary" id="btn-print" type="button" data-i18n="printPlan">列印計畫</button>
+        </div>
+      </div>
+      <div class="print-only" id="print-intro"></div>
+      <div id="shortlist-box" class="card" style="padding:12px"></div>
+    </section>
+
+    <section class="block" id="method">
+      <div class="transparency card">
+        <h2 data-i18n="methodTitle">資料透明度</h2>
+        <div id="method-body"></div>
+        <p><a href="opportunities.csv" download data-i18n="downloadCsv">下載 opportunities.csv</a>
+          · <a href="atlas_data.json" download>atlas_data.json</a>
+          · <a href="travel_matrix.json" download>travel_matrix.json</a></p>
+      </div>
+    </section>
+  </main>
   <footer>
-    <strong style="color:var(--ink)">方法說明</strong><br>
-    出發點為 O'Connell Bridge（53.3473, -6.2591）。本後備頁使用 Leaflet 載入 OpenStreetMap 街道圖磚（© OpenStreetMap contributors）。公共交通分鐘取自 TFI Journey Planner planJourney（FASTEST；步行+巴士+輕軌+鐵路+客運+渡輪）。步行與單車分鐘取自 OSRM 路線距離，再除以步行 4.8 km/h、單車 15 km/h。<br>
-    作品集價值規則：「高」= NFQ 認可課程、多週技能課且有可帶走的製件／劇本／精華帶／專業專案，或產出客戶／品牌作品的薪酬或實習（含無薪）；「中」= 一日或短期導師工作坊、週期藝術家課、公開麥克風、短技能診所；「低」= 講座、諮詢、資訊網上研討會、聯誼會、無導師的自修即場。晚間可行 = 開始時間 ≥18:00、或週末、或線上。費用區間以官方標價計算。未載明的職缺工時按平日白天處理。僅收錄官方或具名求職板來源；官方未載明者不臆造。
+    <span data-i18n="footerMap">地圖圖磚 © OpenStreetMap contributors。通勤時間為估計值，不是即時時刻表。</span>
   </footer>
-</main>
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
-<script>
-const DATA = {"kpis":{"dateChecked":"2026-11-11","count":46,"validCount":46,"completenessPct":90.1,"completenessFilled":1326,"completenessTotal":1472,"sourceTraceabilityPct":100.0,"missingByField":{"venue_name":1,"address":9,"eircode":16,"latitude":14,"longitude":14,"start_time":10,"end_time":18,"cost_eur":16,"registration_deadline":33,"travel_minutes":5,"travel_walk_minutes":5,"travel_cycle_minutes":5},"byCategory":{"event":19,"training":17,"job":10},"byArea":{"Dublin City":28,"Dún Laoghaire-Rathdown":1,"South Dublin":5,"Online":9,"Fingal":3},"origin":{"name":"O'Connell Bridge, Dublin city centre","lat":53.3473,"lng":-6.2591}},"items":[{"id":"OPP-01","title":"REWORKED: A Zero-Waste Jewellery Workshop with Shock of Grey","category":"event","organiser":"IMMA (Irish Museum of Modern Art); workshop led by Shock of Grey","venue":"Matheson Creativity Hub, IMMA","address":"Royal Hospital Kilmainham, Dublin 8, Ireland","eircode":"D08 FW31","lat":53.342917,"lng":-6.299465,"dates":"2026-11-14 (also separately bookable 2026-11-21 and 2026-12-12)","start":"11:00","end":"13:00","weekday":"Saturday","cost":42.78,"costBand":"≤€50","deadline":"","format":"in-person","skill":"craft/fashion","source":"https://imma.ie/whats-on/winter-at-imma/","pt":20,"walk":50,"cycle":16,"monWedConflict":"no","eveningFeasible":"yes","portfolio":"medium","portfolioWhy":"One-session making workshop with a take-home jewellery piece, but not a multi-week or accredited programme.","area":"Dublin City","timeBand":"Weekend"},{"id":"OPP-02","title":"Tender Whispers From the Heart – Embroidery Workshops","category":"event","organiser":"dlr Libraries and Creative Ireland dlr; delivered by textile artist Rebecca Devaney","venue":"Room 4, Level 5, dlr LexIcon","address":"Haigh Terrace, Moran Park, Dún Laoghaire, County Dublin, Ireland","eircode":"A96 H283","lat":53.292935,"lng":-6.131782,"dates":"2026-11-21, 2026-11-28 and 2026-12-05 (participants must attend all three classes)","start":"10:00","end":"12:30","weekday":"Saturday","cost":0,"costBand":"free","deadline":"","format":"in-person","skill":"craft/fashion","source":"https://libraries.dlrcoco.ie/events-and-news/event-calendar/tender-whispers-heart-workshops","pt":32,"walk":160,"cycle":51,"monWedConflict":"no","eveningFeasible":"yes","portfolio":"medium","portfolioWhy":"Three tutored Saturday sessions produce finished embroidery and include materials, but the programme is not accredited.","area":"Dún Laoghaire-Rathdown","timeBand":"Weekend"},{"id":"OPP-03","title":"Chester Beatty Drop-in Drawing with Roxana Manouchehri (Portrait Drawing)","category":"event","organiser":"Chester Beatty; facilitated by Roxana Manouchehri","venue":"Coolock Library","address":"Barryscourt Road, Dublin 17, Ireland","eircode":"D17 C950","lat":53.396254,"lng":-6.211968,"dates":"2026-11-21 (a further session on 2026-12-12 is listed separately at Charleville Mall Library)","start":"14:00","end":"","weekday":"Saturday","cost":0,"costBand":"free","deadline":"No booking required","format":"in-person","skill":"design","source":"https://chesterbeatty.ie/whats-on/onsite-drop-in-drawing/","pt":36,"walk":92,"cycle":30,"monWedConflict":"no","eveningFeasible":"yes","portfolio":"medium","portfolioWhy":"Artist-led drawing session that produces new drawings; drop-in and unassessed, so not high portfolio value.","area":"Dublin City","timeBand":"Weekend"},{"id":"OPP-04","title":"Writing Wednesdays (weekly write-in)","category":"event","organiser":"Writing Wednesdays (hosted by Emilie Ní F. on Meetup)","venue":"Caffè Nero, King Street South","address":"King Street South, Dublin 2, Ireland","eircode":"","lat":53.340267,"lng":-6.261344,"dates":"Weekly on Wednesdays until 2026-12-29 (next dates from 12 Nov include 12, 18 and 25 Nov 2026)","start":"18:00","end":"20:00","weekday":"Wednesday","cost":null,"costBand":"not stated","deadline":"","format":"in-person","skill":"writing","source":"https://www.meetup.com/writing-wednesdays/events/qrcdztyjcpbhc/","pt":13,"walk":41,"cycle":13,"monWedConflict":"no","eveningFeasible":"yes","portfolio":"low","portfolioWhy":"Informal cafe write-in with optional sharing; no structured brief or assessed output.","area":"Dublin City","timeBand":"Weekday evening"},{"id":"OPP-05","title":"Think Before You Trust: Protecting Your Business in the AI Era","category":"event","organiser":"Local Enterprise Office Dublin City; talk by Belén Delgado","venue":"Ilac Centre (Dublin City Library)","address":"Ilac Centre, Henry Street, North City, Dublin, Ireland","eircode":"D01 E9V3","lat":53.349968,"lng":-6.264651,"dates":"2026-12-14","start":"18:00","end":"19:00","weekday":"Monday","cost":0,"costBand":"free","deadline":"","format":"in-person","skill":"AI/tech","source":"https://www.localenterprise.ie/dublincity/training-events/online-bookings/free-library-talks-think-before-you-trust-protecting-your-business-in-the-ai-era-14th-december-2026.html","pt":9,"walk":23,"cycle":7,"monWedConflict":"no","eveningFeasible":"yes","portfolio":"low","portfolioWhy":"One-hour information talk; no making or assessed output.","area":"Dublin City","timeBand":"Weekday evening"},{"id":"OPP-06","title":"Making it Now: An Introduction to Experimental Fiction with Dave Lordan","category":"training","organiser":"Irish Writers Centre","venue":"Irish Writers Centre","address":"19 Parnell Square, Dublin 1, Ireland","eircode":"D01 E102","lat":53.354346,"lng":-6.264151,"dates":"2026-11-21","start":"11:00","end":"17:00","weekday":"Saturday","cost":120,"costBand":"€51–200","deadline":"2026-11-20 23:59 (bookings cease at midnight on the date preceding the course)","format":"in-person","skill":"writing","source":"https://irishwriterscentre.ie/courses/making-it-now-an-introduction-to-experimental-fiction-with-dave-lordan/","pt":9,"walk":24,"cycle":8,"monWedConflict":"no","eveningFeasible":"yes","portfolio":"medium","portfolioWhy":"One-day tutored course that generates new experimental fiction, but it is not accredited or multi-week.","area":"Dublin City","timeBand":"Weekend"},{"id":"OPP-07","title":"Introduction to Photoshop (PHS)","category":"training","organiser":"City of Dublin FET College, Crumlin (City of Dublin ETB)","venue":"City of Dublin FET College, Crumlin (Southwest Campus)","address":"Crumlin Road, Dublin 12, Ireland","eircode":"D12 N921","lat":53.320735,"lng":-6.308541,"dates":"Starts 2026-11-18, 4 weeks (Wednesdays)","start":"18:00","end":"21:00","weekday":"Wednesday","cost":120,"costBand":"€51–200","deadline":"","format":"in-person","skill":"design","source":"https://www.crumlincollege.ie/_fileupload/1612-city-of-dublin-fet-college-crumlin-evening-courses-brochure-september-2026-digital.pdf","pt":34,"walk":81,"cycle":26,"monWedConflict":"no","eveningFeasible":"yes","portfolio":"high","portfolioWhy":"Four-week evening skills course in industry-standard Adobe tools, producing edited images that can go straight into a design portfolio.","area":"Dublin City","timeBand":"Weekday evening"},{"id":"OPP-08","title":"Beginners Photography Continuation (BPC)","category":"training","organiser":"City of Dublin FET College, Crumlin (City of Dublin ETB)","venue":"City of Dublin FET College, Crumlin (Southwest Campus)","address":"Crumlin Road, Dublin 12, Ireland","eircode":"D12 N921","lat":53.320735,"lng":-6.308541,"dates":"Starts 2026-11-16, 4 weeks (Mondays)","start":"18:00","end":"21:00","weekday":"Monday","cost":120,"costBand":"€51–200","deadline":"","format":"in-person","skill":"photography","source":"https://www.crumlincollege.ie/_fileupload/1612-city-of-dublin-fet-college-crumlin-evening-courses-brochure-september-2026-digital.pdf","pt":34,"walk":81,"cycle":26,"monWedConflict":"no","eveningFeasible":"yes","portfolio":"high","portfolioWhy":"Four-week photography course producing new images for a portfolio, even though it is not an NFQ award.","area":"Dublin City","timeBand":"Weekday evening"},{"id":"OPP-09","title":"Professional Certificate in Creative Learning (NFQ Level 9, 5 credits)","category":"training","organiser":"Creative Futures Academy at NCAD, co-delivered with Rua Red South Dublin Arts Centre","venue":"Rua Red, South Dublin Arts Centre (in-person sessions); intro session online","address":"Plás Parthalán, Tallaght, Ireland","eircode":"D24 KV8N","lat":53.288083,"lng":-6.373123,"dates":"2026-12-11 to 2027-03-06; in-person Saturdays 23 Jan, 30 Jan, 6 Feb, 13 Feb, 27 Feb and 6 Mar 2027; online intro Fri 11 Dec 2026 18:30–19:30","start":"11:30","end":"14:30","weekday":"Saturday (in-person); Friday (online intro)","cost":600,"costBand":">€200","deadline":"Applications close when the course is full (date not stated)","format":"hybrid","skill":"design","source":"https://www.ncad.ie/postgraduate/professional-development-short-courses/professional-certificate-in-creative-learning/","pt":56,"walk":170,"cycle":54,"monWedConflict":"no","eveningFeasible":"yes","portfolio":"high","portfolioWhy":"NFQ Level 9 accredited certificate with assessed creative-facilitation practice.","area":"South Dublin","timeBand":"Weekend"},{"id":"OPP-10","title":"Professional Certificate in AI for Design (NFQ Level 9, 5 credits)","category":"training","organiser":"Creative Futures Academy at NCAD","venue":"Online","address":"","eircode":"","lat":null,"lng":null,"dates":"2026-12-15 to 2027-02-09 (7 weeks part-time, one evening per week)","start":"18:30","end":"21:00","weekday":"Tuesday","cost":600,"costBand":">€200","deadline":"","format":"online","skill":"AI/tech","source":"https://www.ncad.ie/postgraduate/professional-development-short-courses/professional-certificate-in-design-for-ai/","pt":0,"walk":0,"cycle":0,"monWedConflict":"no","eveningFeasible":"yes","portfolio":"high","portfolioWhy":"NFQ Level 9 accredited certificate applying AI tools inside a design practice.","area":"Online","timeBand":"Online (weekday evening)"},{"id":"OPP-11","title":"Level 1 Voice-Over Acting","category":"training","organiser":"The Lir Academy (National Academy of Dramatic Art at Trinity College Dublin)","venue":"The Lir Academy","address":"Trinity Technology and Enterprise Campus, Pearse Street (at Grand Canal Quay), Dublin 2, Ireland","eircode":"D02 HW24","lat":53.342224,"lng":-6.239199,"dates":"2026-11-28 and 2026-11-29","start":"10:00","end":"17:00","weekday":"Saturday and Sunday","cost":300,"costBand":">€200","deadline":"","format":"in-person","skill":"performance","source":"https://www.thelir.ie/courses/intro-to-voice-over-weekend","pt":10,"walk":25,"cycle":8,"monWedConflict":"no","eveningFeasible":"yes","portfolio":"high","portfolioWhy":"Weekend course whose advertised outcomes include a voice-over showreel and professional-development materials.","area":"Dublin City","timeBand":"Weekend"},{"id":"OPP-12","title":"ReJean: Make Your Own Denim Tote (four-week creative sewing workshop)","category":"training","organiser":"Creative Workshops Dublin / Dublin Art Meetup; tutored by fashion designer Sharon Sweeney","venue":"Flux Studios D2","address":"4 Chatham Row, Dublin, Ireland","eircode":"D02 PA06","lat":53.341088,"lng":-6.262811,"dates":"2026-11-16, 2026-11-23, 2026-11-30 and 2026-12-07","start":"18:00","end":"21:00","weekday":"Monday","cost":200,"costBand":"€51–200","deadline":"","format":"in-person","skill":"craft/fashion","source":"https://www.meetup.com/meetup-group-fbnrhdeb/events/317159149/","pt":12,"walk":37,"cycle":12,"monWedConflict":"no","eveningFeasible":"yes","portfolio":"high","portfolioWhy":"Four-week making course whose advertised outcome is a completed, fully lined denim tote — a concrete portfolio object.","area":"Dublin City","timeBand":"Weekday evening"},{"id":"OPP-13","title":"Graphic Designer Graduate – Dublin (Fixed Term)","category":"job","organiser":"Society of St Vincent de Paul (SVP)","venue":"SVP House (National Digital Marketing & Communications team)","address":"91-92 Sean MacDermott Street, Dublin 1, Ireland","eircode":"D01 WV38","lat":53.353132,"lng":-6.254941,"dates":"Currently listed (fixed-term role; start date not stated on the public careers list)","start":"","end":"","weekday":"Weekday (typical office hours not stated on the public list)","cost":null,"costBand":"n/a (job)","deadline":"","format":"in-person","skill":"design","source":"https://www.svp.ie/careers/work-with-us/","pt":11,"walk":13,"cycle":4,"monWedConflict":"yes","eveningFeasible":"no","portfolio":"high","portfolioWhy":"Professional graphic-design role producing campaign and brand work for a national organisation.","area":"Dublin City","timeBand":"Weekday daytime"},{"id":"OPP-14","title":"Social Media Internship (3–6–9 months, unpaid)","category":"job","organiser":"Lensmen Photography and Video Production","venue":"Lensmen office","address":"17 Nottingham Street, North Strand, Dublin 3, Ireland","eircode":"D03 C654","lat":53.359114,"lng":-6.242355,"dates":"Open / rolling (start date and closing date not stated)","start":"","end":"","weekday":"Weekday (office hours stated as 07:30–18:30 Monday–Saturday; internship hours not separately stated)","cost":null,"costBand":"n/a (job)","deadline":"","format":"in-person","skill":"digital marketing","source":"https://www.lensmen.ie/social-media-intern/","pt":13,"walk":25,"cycle":8,"monWedConflict":"yes","eveningFeasible":"no","portfolio":"high","portfolioWhy":"Professional content produced for a trading photography and video company, even though the internship is unpaid.","area":"Dublin City","timeBand":"Weekday daytime"},{"id":"OPP-15","title":"Junior Social Media Executive","category":"job","organiser":"Remi","venue":"","address":"Dublin 3 (street address not stated)","eircode":"","lat":null,"lng":null,"dates":"Currently listed (start date stated as TBC on the vacancy notice)","start":"","end":"","weekday":"Weekday (full-time; hours not stated)","cost":null,"costBand":"n/a (job)","deadline":"","format":"in-person","skill":"digital marketing","source":"https://www.bfei.ie/uploads/images/pdf/Remi_Junior_Social_Media_Executive_2026.pdf","pt":null,"walk":null,"cycle":null,"monWedConflict":"yes","eveningFeasible":"no","portfolio":"high","portfolioWhy":"Full-time junior role creating social, photo and short-form video content for a growing brand, including US travel.","area":"Dublin City","timeBand":"Weekday daytime"},{"id":"OPP-16","title":"Singing a Little Song: Finding Your Sonnet Voice with Catherine Ann Cullen","category":"training","organiser":"Irish Writers Centre","venue":"Irish Writers Centre","address":"19 Parnell Square, Dublin 1, Ireland","eircode":"D01 E102","lat":53.354346,"lng":-6.264151,"dates":"2026-11-14","start":"10:30","end":"16:30","weekday":"Saturday","cost":120,"costBand":"€51–200","deadline":"2026-11-13 23:59 (bookings cease at midnight on the date preceding the course)","format":"in-person","skill":"writing","source":"https://irishwriterscentre.ie/courses/singing-a-little-song-finding-your-sonnet-voice-with-catherine-ann-cullen/","pt":11,"walk":24,"cycle":8,"monWedConflict":"no","eveningFeasible":"yes","portfolio":"medium","portfolioWhy":"One-day tutored course whose advertised outcome is at least one new sonnet, but it is not accredited.","area":"Dublin City","timeBand":"Weekend"},{"id":"OPP-17","title":"Creative Space (monthly open mic)","category":"event","organiser":"Axis Ballymun","venue":"Axis Cafe","address":"Axis Ballymun, Main Street, Ballymun, Dublin 9, Ireland","eircode":"D09 Y9W0","lat":53.395821,"lng":-6.262914,"dates":"2026-11-25 and 2026-12-16","start":"18:30","end":"","weekday":"Wednesday","cost":null,"costBand":"not stated","deadline":"","format":"in-person","skill":"performance","source":"https://www.axisballymun.ie/open-mic","pt":39,"walk":84,"cycle":27,"monWedConflict":"no","eveningFeasible":"yes","portfolio":"medium","portfolioWhy":"Public open-mic performance opportunity (music, comedy, poetry or spoken word) for ages 16+, but no structured or assessed output.","area":"Dublin City","timeBand":"Weekday evening"},{"id":"OPP-18","title":"Poems for Assembly","category":"event","organiser":"Poetry Ireland / Éigse Éireann","venue":"Poetry Ireland, No. 11 Parnell Square","address":"11 Parnell Square East, Dublin 1, Ireland","eircode":"D01 ND60","lat":53.35419,"lng":-6.262762,"dates":"2026-11-12","start":"18:00","end":"","weekday":"Thursday","cost":0,"costBand":"free","deadline":"","format":"in-person","skill":"writing","source":"https://www.poetryireland.ie/news-events/poems-assembly","pt":10,"walk":23,"cycle":7,"monWedConflict":"no","eveningFeasible":"yes","portfolio":"low","portfolioWhy":"Evening of readings and conversation; attendance does not produce a new portfolio piece.","area":"Dublin City","timeBand":"Weekday evening"},{"id":"OPP-19","title":"Insights: 'I do this, I do that': Sampling the Everyday","category":"training","organiser":"Poetry Ireland; workshop led by Christodoulos Makris","venue":"Online","address":"","eircode":"","lat":null,"lng":null,"dates":"2026-11-23","start":"18:30","end":"","weekday":"Monday","cost":20,"costBand":"≤€50","deadline":"","format":"online","skill":"writing","source":"https://www.poetryireland.ie/news-events/insights-i-do-i-do-sampling-everyday","pt":0,"walk":0,"cycle":0,"monWedConflict":"no","eveningFeasible":"yes","portfolio":"medium","portfolioWhy":"Tutored poetry workshop on sampling everyday texts, expected to generate new work, but duration after 18:30 and accreditation are not stated.","area":"Online","timeBand":"Online (weekday evening)"},{"id":"OPP-20","title":"DABF26 Workshop: ALSO editions, ‘Blackout Poetry’","category":"event","organiser":"Temple Bar Gallery + Studios with ALSO editions and TU Dublin School of Art & Design (Visual Communication)","venue":"Temple Bar Gallery + Studios (via Dublin Art Book Fair check-in)","address":"5-9 Temple Bar, Dublin 2, Ireland","eircode":"D02 AC84","lat":53.345631,"lng":-6.263607,"dates":"2026-12-06","start":"11:30","end":"13:00","weekday":"Sunday","cost":null,"costBand":"not stated","deadline":"","format":"in-person","skill":"design","source":"https://www.templebargallery.com/whats-on/events/dabf26-workshop-also-editions-blackout-poetry","pt":6,"walk":33,"cycle":10,"monWedConflict":"no","eveningFeasible":"yes","portfolio":"medium","portfolioWhy":"Hands-on workshop producing text and photo montages from archival design journals; fee is not stated and it is not accredited.","area":"Dublin City","timeBand":"Weekend"},{"id":"OPP-21","title":"Xchange (experimental live-art and performance jam)","category":"event","organiser":"Xchange at Rua Red (founded by Olivia Hassett and Paul Regan)","venue":"Rua Red, South Dublin Arts Centre","address":"Plás Parthalán / Old Blessington Road, Tallaght, Ireland","eircode":"D24 KV8N","lat":53.288083,"lng":-6.373123,"dates":"2026-11-29","start":"14:00","end":"16:00","weekday":"Saturday","cost":0,"costBand":"free","deadline":"","format":"in-person","skill":"performance","source":"https://www.ruared.ie/whatson","pt":46,"walk":170,"cycle":54,"monWedConflict":"no","eveningFeasible":"yes","portfolio":"medium","portfolioWhy":"Two-hour collaborative performance-art jam that can yield live work and encounters, but it is informal and unassessed.","area":"South Dublin","timeBand":"Weekend"},{"id":"OPP-22","title":"Rua Red Adult Drawing Classes (Saturday artist-led sessions)","category":"training","organiser":"Rua Red, South Dublin Arts Centre","venue":"Rua Red, South Dublin Arts Centre","address":"Plás Parthalán / Old Blessington Road, Tallaght, Ireland","eircode":"D24 KV8N","lat":53.288083,"lng":-6.373123,"dates":"Every Saturday 15:30–17:00; Christmas-themed options on 2026-12-13 and 2026-12-20","start":"15:30","end":"17:00","weekday":"Saturday","cost":6,"costBand":"≤€50","deadline":"","format":"in-person","skill":"design","source":"https://www.ruared.ie/whatson","pt":46,"walk":170,"cycle":54,"monWedConflict":"no","eveningFeasible":"yes","portfolio":"medium","portfolioWhy":"Recurring artist-led drawing class producing new work each week; drop-in and unaccredited, so not high portfolio value.","area":"South Dublin","timeBand":"Weekend"},{"id":"OPP-23","title":"Rua Red Mid-Week Drawing Sessions (self-led drop-in)","category":"event","organiser":"Rua Red, South Dublin Arts Centre","venue":"Rua Red, South Dublin Arts Centre","address":"Plás Parthalán / Old Blessington Road, Tallaght, Ireland","eircode":"D24 KV8N","lat":53.288083,"lng":-6.373123,"dates":"Weekly on Wednesdays (ongoing listing)","start":"10:30","end":"12:30","weekday":"Wednesday","cost":0,"costBand":"free","deadline":"No booking required (free drop-in)","format":"in-person","skill":"design","source":"https://www.ruared.ie/whatson","pt":44,"walk":170,"cycle":54,"monWedConflict":"yes","eveningFeasible":"no","portfolio":"low","portfolioWhy":"Self-led drop-in with no tutor; useful practice time but no structured brief or feedback.","area":"South Dublin","timeBand":"Weekday daytime"},{"id":"OPP-24","title":"Getting Creative with Words with Felicia McCarthy (The Write Time 2026)","category":"event","organiser":"Fingal Libraries; workshop led by Felicia McCarthy","venue":"Rush Library","address":"Chapel Green, Rush, Co. Dublin, Ireland","eircode":"K56 ED95","lat":53.521862,"lng":-6.10195,"dates":"2026-11-12","start":"18:15","end":"","weekday":"Thursday","cost":null,"costBand":"not stated","deadline":"","format":"in-person","skill":"writing","source":"https://explorefingal.ie/whats-on/getting-creative-with-words-with-felicia-mccarthy-write-time/","pt":54,"walk":330,"cycle":106,"monWedConflict":"no","eveningFeasible":"yes","portfolio":"medium","portfolioWhy":"Prompt-led creative writing workshop for all levels that should generate new drafts; fee, duration and accreditation are not stated.","area":"Fingal","timeBand":"Weekday evening"},{"id":"OPP-25","title":"Demystifying the Personal Essay with Ellen Brickley","category":"event","organiser":"Fingal Libraries; workshop led by Ellen Brickley","venue":"Blanchardstown Library","address":"The Civic Centre, Blanchardstown Centre, Dublin 15, Ireland","eircode":"D15 RY73","lat":53.390758,"lng":-6.391235,"dates":"2026-11-19","start":"18:00","end":"","weekday":"Thursday","cost":null,"costBand":"not stated","deadline":"","format":"in-person","skill":"writing","source":"https://explorefingal.ie/whats-on/demystifying-the-personal-essay-with-ellen-brickley-2/","pt":59,"walk":147,"cycle":47,"monWedConflict":"no","eveningFeasible":"yes","portfolio":"medium","portfolioWhy":"Workshop covering idea generation, outlining, conventions and publication routes for personal essays; fee and end time not stated.","area":"Fingal","timeBand":"Weekday evening"},{"id":"OPP-26","title":"The Art of Us with Rough Draft Poetry and Ivy","category":"event","organiser":"Blanchardstown Library with Rough Draft Poetry and artist Ivy (Fingal Inclusion Week)","venue":"Blanchardstown Library","address":"The Civic Centre, Blanchardstown Centre, Dublin 15, Ireland","eircode":"D15 RY73","lat":53.390758,"lng":-6.391235,"dates":"2026-11-17","start":"16:30","end":"","weekday":"Tuesday","cost":null,"costBand":"not stated","deadline":"No booking required","format":"in-person","skill":"writing","source":"https://explorefingal.ie/whats-on/the-art-of-us-with-rough-draft-poetry-and-ivy/","pt":58,"walk":147,"cycle":47,"monWedConflict":"yes","eveningFeasible":"no","portfolio":"medium","portfolioWhy":"Open mic, guided art session and collective writing in one afternoon; unassessed and fee not stated.","area":"Fingal","timeBand":"Weekday daytime"},{"id":"OPP-27","title":"LEO DLR Group Information Session","category":"event","organiser":"Local Enterprise Office Dún Laoghaire-Rathdown","venue":"Online","address":"","eircode":"","lat":null,"lng":null,"dates":"2026-11-18 (a further session is listed for 2026-12-01)","start":"12:00","end":"14:00","weekday":"Wednesday","cost":0,"costBand":"free","deadline":"","format":"online","skill":"business","source":"https://www.localenterprise.ie/dlr/training-events/online-bookings/events/leo-dlr-group-information-session-18-nov-2026.html","pt":0,"walk":0,"cycle":0,"monWedConflict":"yes","eveningFeasible":"yes","portfolio":"low","portfolioWhy":"Information session on grants, mentoring and supports; no making or assessed output.","area":"Online","timeBand":"Online (weekday daytime)"},{"id":"OPP-28","title":"Actor as Writer","category":"training","organiser":"The Lir Academy","venue":"The Lir Academy","address":"Trinity Technology and Enterprise Campus, Pearse Street (at Grand Canal Quay), Dublin 2, Ireland","eircode":"D02 HW24","lat":53.342224,"lng":-6.239199,"dates":"2026-12-12 and 2026-12-13","start":"10:00","end":"17:00","weekday":"Saturday and Sunday","cost":300,"costBand":">€200","deadline":"","format":"in-person","skill":"writing","source":"https://www.thelir.ie/courses/actor-as-writer-weekend","pt":10,"walk":25,"cycle":8,"monWedConflict":"no","eveningFeasible":"yes","portfolio":"high","portfolioWhy":"Weekend course whose advertised outcome is a short original play or performance text ready to perform or develop.","area":"Dublin City","timeBand":"Weekend"},{"id":"OPP-29","title":"Ag Aisteoireacht as Gaeilge / Acting in Irish","category":"training","organiser":"The Lir Academy","venue":"The Lir Academy","address":"Trinity Technology and Enterprise Campus, Pearse Street (at Grand Canal Quay), Dublin 2, Ireland","eircode":"D02 HW24","lat":53.342224,"lng":-6.239199,"dates":"2026-11-28 and 2026-11-29","start":"10:00","end":"17:00","weekday":"Saturday and Sunday","cost":300,"costBand":">€200","deadline":"","format":"in-person","skill":"performance","source":"https://www.thelir.ie/courses/acting-in-irish","pt":10,"walk":25,"cycle":8,"monWedConflict":"no","eveningFeasible":"yes","portfolio":"high","portfolioWhy":"Intensive weekend of scene work in Irish for emerging actors, producing performance material that can support auditions.","area":"Dublin City","timeBand":"Weekend"},{"id":"OPP-30","title":"Acting – Level 1","category":"training","organiser":"The Lir Academy","venue":"The Lir Academy","address":"Trinity Technology and Enterprise Campus, Pearse Street (at Grand Canal Quay), Dublin 2, Ireland","eircode":"D02 HW24","lat":53.342224,"lng":-6.239199,"dates":"Starts 2027-01-12, 10 weeks (Tuesdays)","start":"19:00","end":"21:30","weekday":"Tuesday","cost":430,"costBand":">€200","deadline":"","format":"in-person","skill":"performance","source":"https://www.thelir.ie/courses/acting-level-1","pt":11,"walk":25,"cycle":8,"monWedConflict":"no","eveningFeasible":"yes","portfolio":"high","portfolioWhy":"Ten-week tutored evening course in foundational acting technique, with scene and monologue work that can support further training applications.","area":"Dublin City","timeBand":"Weekday evening"},{"id":"OPP-31","title":"Screenwriting Level 1 (Online)","category":"training","organiser":"The Lir Academy","venue":"Online","address":"","eircode":"","lat":null,"lng":null,"dates":"Starts 2027-01-12, 10 weeks (Tuesdays)","start":"19:00","end":"21:00","weekday":"Tuesday","cost":430,"costBand":">€200","deadline":"","format":"online","skill":"writing","source":"https://www.thelir.ie/courses/screenwriting-level-1","pt":0,"walk":0,"cycle":0,"monWedConflict":"no","eveningFeasible":"yes","portfolio":"high","portfolioWhy":"Ten-week introductory screenwriting course, producing script pages that can form a writing sample.","area":"Online","timeBand":"Online (weekday evening)"},{"id":"OPP-32","title":"Social Media Strategy & Content Planning","category":"training","organiser":"Local Enterprise Office Dún Laoghaire-Rathdown; delivered by Digital Insights","venue":"Online via Zoom","address":"","eircode":"","lat":null,"lng":null,"dates":"2026-11-25","start":"09:30","end":"12:30","weekday":"Wednesday","cost":20,"costBand":"≤€50","deadline":"","format":"online","skill":"digital marketing","source":"https://www.localenterprise.ie/dlr/training-events/online-bookings/events/social-media-strategy-content-planning-25th-nov-2026.html","pt":0,"walk":0,"cycle":0,"monWedConflict":"yes","eveningFeasible":"yes","portfolio":"medium","portfolioWhy":"Three-hour workshop including a mock campaign; useful samples possible, but it is a short unaccredited session.","area":"Online","timeBand":"Online (weekday daytime)"},{"id":"OPP-33","title":"Pitching and Presentation Skills Workshop","category":"training","organiser":"Local Enterprise Office Dún Laoghaire-Rathdown","venue":"Online via Zoom","address":"","eircode":"","lat":null,"lng":null,"dates":"2026-12-02","start":"09:30","end":"12:30","weekday":"Wednesday","cost":20,"costBand":"≤€50","deadline":"","format":"online","skill":"business","source":"https://www.localenterprise.ie/dlr/training-events/online-bookings/events/pitching-and-presentation-skills-workshop-2nd-dec-2026.html","pt":0,"walk":0,"cycle":0,"monWedConflict":"yes","eveningFeasible":"yes","portfolio":"medium","portfolioWhy":"Skills workshop on pitching with more clarity and confidence; may yield a practised pitch, but it is short and unaccredited.","area":"Online","timeBand":"Online (weekday daytime)"},{"id":"OPP-34","title":"Digital & AI Boost: LEO’s Digital Toolkit to Success","category":"training","organiser":"Local Enterprise Office Fingal","venue":"Online","address":"","eircode":"","lat":null,"lng":null,"dates":"2026-11-19","start":"09:30","end":"11:30","weekday":"Thursday","cost":0,"costBand":"free","deadline":"","format":"online","skill":"AI/tech","source":"https://www.localenterprise.ie/fingal/training-events/online-bookings/miscellaneous/digital-ai-boost-leos-digital-toolkit-to-success-thursday-19th-november.html","pt":0,"walk":0,"cycle":0,"monWedConflict":"no","eveningFeasible":"yes","portfolio":"low","portfolioWhy":"Information webinar on LEO digital grants and supports, not a making or assessed skills course.","area":"Online","timeBand":"Online (weekday daytime)"},{"id":"OPP-35","title":"NEXT STEPS Network Meet Up: Pitch, Partner, and Power Up","category":"event","organiser":"Local Enterprise Office Dublin City","venue":"ID8 Studio, The Digital Hub","address":"The Digital Hub, Dublin 8, Ireland","eircode":"D08 TCV4","lat":53.344125,"lng":-6.283322,"dates":"2026-11-20","start":"10:00","end":"12:00","weekday":"Friday","cost":0,"costBand":"free","deadline":"","format":"in-person","skill":"business","source":"https://www.localenterprise.ie/dublincity/training-events/online-bookings/next-steps-network-meet-up-friday-20th-november-2026.html","pt":16,"walk":38,"cycle":12,"monWedConflict":"no","eveningFeasible":"no","portfolio":"low","portfolioWhy":"Networking and pitch-practice meetup; useful practice but not a portfolio artefact programme.","area":"Dublin City","timeBand":"Weekday daytime"},{"id":"OPP-36","title":"Business Advice Clinic","category":"event","organiser":"Local Enterprise Office Dublin City","venue":"Online (Zoom)","address":"","eircode":"","lat":null,"lng":null,"dates":"2026-11-17","start":"10:30","end":"12:30","weekday":"Tuesday","cost":0,"costBand":"free","deadline":"","format":"online","skill":"business","source":"https://www.localenterprise.ie/dublincity/training-events/online-bookings/business-advice-clinic-tuesday-17th-nov-2026.html","pt":0,"walk":0,"cycle":0,"monWedConflict":"yes","eveningFeasible":"yes","portfolio":"low","portfolioWhy":"Group advice clinic on starting a business and LEO supports; no making or assessed output.","area":"Online","timeBand":"Online (weekday daytime)"},{"id":"OPP-37","title":"Marketing Intern – Ireland (Marketing Assistant, Consumer Beauty)","category":"job","organiser":"Coty","venue":"Coty Ireland (Dublin office)","address":"Dublin 2, Ireland","eircode":"D02 W261","lat":53.341125,"lng":-6.2545,"dates":"Currently listed; 13-month fixed-term contract starting July 2027 (posted 29 Oct 2026)","start":"","end":"","weekday":"Weekday (hours not stated)","cost":null,"costBand":"n/a (job)","deadline":"","format":"in-person","skill":"digital marketing","source":"https://careers.coty.com/job/Dublin-Marketing-Intern-Ireland-D-D02-W261/1452451033/","pt":10,"walk":46,"cycle":15,"monWedConflict":"yes","eveningFeasible":"no","portfolio":"high","portfolioWhy":"13-month marketing assistant contract producing campaigns, POS, PR and social coordination for major beauty brands.","area":"Dublin City","timeBand":"Weekday daytime"},{"id":"OPP-38","title":"Poets Coaching Clinic with Anne Tannam","category":"event","organiser":"Poetry Ireland; facilitated by Anne Tannam","venue":"Online","address":"","eircode":"","lat":null,"lng":null,"dates":"2026-11-12","start":"08:30","end":"16:30","weekday":"Thursday","cost":0,"costBand":"free","deadline":"","format":"online","skill":"writing","source":"https://www.poetryireland.ie/news-events/poets-coaching-clinic-anne-tannam-0","pt":0,"walk":0,"cycle":0,"monWedConflict":"no","eveningFeasible":"yes","portfolio":"medium","portfolioWhy":"Free 30-minute coaching slots on craft and professional development; useful guidance, but not a produced portfolio piece.","area":"Online","timeBand":"Online (weekday daytime)"},{"id":"OPP-39","title":"Chester Beatty Drop-in Drawing with Roxana Manouchehri (Festive Patterns & Illuminated Margins)","category":"event","organiser":"Chester Beatty; facilitated by Roxana Manouchehri","venue":"Charleville Mall Library","address":"Charleville Mall, North Strand, Dublin 1, Ireland","eircode":"D01 AX99","lat":53.357158,"lng":-6.246067,"dates":"2026-12-12","start":"14:00","end":"","weekday":"Saturday","cost":0,"costBand":"free","deadline":"No booking required","format":"in-person","skill":"design","source":"https://chesterbeatty.ie/whats-on/onsite-drop-in-drawing/","pt":12,"walk":22,"cycle":7,"monWedConflict":"no","eveningFeasible":"yes","portfolio":"medium","portfolioWhy":"Artist-led drop-in drawing on festive patterns and illuminated margins; produces drawings but is unassessed.","area":"Dublin City","timeBand":"Weekend"},{"id":"OPP-40","title":"Dance Social Workshops with Philippa Donnellan","category":"event","organiser":"Rua Red, South Dublin Arts Centre; led by choreographer Philippa Donnellan","venue":"Rua Red, South Dublin Arts Centre","address":"Plás Parthalán / Old Blessington Road, Tallaght, Ireland","eircode":"D24 KV8N","lat":53.288083,"lng":-6.373123,"dates":"Remaining listed dates: 2026-11-11 and 2026-11-18 (series began 30 September)","start":"14:00","end":"15:00","weekday":"Wednesday","cost":5,"costBand":"≤€50","deadline":"","format":"in-person","skill":"performance","source":"https://www.ruared.ie/whatson","pt":45,"walk":170,"cycle":54,"monWedConflict":"yes","eveningFeasible":"no","portfolio":"low","portfolioWhy":"Drop-in movement and wellbeing workshop, not a performance-making or assessed class.","area":"South Dublin","timeBand":"Weekday daytime"},{"id":"OPP-41","title":"Design Intern (Textile / Print Design)","category":"job","organiser":"Dunnes Stores","venue":"Dunnes Stores Head Office (Textile Departments)","address":"Dublin city centre (street address not stated on the listing)","eircode":"","lat":null,"lng":null,"dates":"Currently listed; internship for print design graduates in the Textile Departments (start date not stated)","start":"","end":"","weekday":"Weekday (hours not stated)","cost":null,"costBand":"n/a (job)","deadline":"2026-11-13 (IrishJobs listing validThrough; a separate closing sentence is not worded on the page)","format":"in-person","skill":"design","source":"https://www.irishjobs.ie/job/design-intern/dunnes-stores-job108157788","pt":null,"walk":null,"cycle":null,"monWedConflict":"yes","eveningFeasible":"no","portfolio":"high","portfolioWhy":"Graduate internship producing print ranges, design packs and artwork inside a professional textile design team.","area":"Dublin City","timeBand":"Weekday daytime"},{"id":"OPP-42","title":"Traditional Arts Assistant (Clerical Officer, part-time)","category":"job","organiser":"The Arts Council / An Chomhairle Ealaíon","venue":"The Arts Council offices","address":"70 Merrion Square, Dublin 2, Ireland","eircode":"D02 NY52","lat":53.338792,"lng":-6.250064,"dates":"Currently listed; permanent part-time, 17.5 hours per week","start":"","end":"","weekday":"Weekday (hours not stated)","cost":null,"costBand":"n/a (job)","deadline":"2026-11-24 12:00 (noon, Tuesday)","format":"in-person","skill":"business","source":"https://artscouncil.ie/careers/traditional-arts-assistant/","pt":11,"walk":22,"cycle":7,"monWedConflict":"yes","eveningFeasible":"no","portfolio":"medium","portfolioWhy":"Paid arts-organisation post at Clerical Officer grade, but the advertised work is clerical support rather than making or campaign content.","area":"Dublin City","timeBand":"Weekday daytime"},{"id":"OPP-43","title":"Safe to Create Administrator","category":"job","organiser":"Irish Theatre Institute (Safe to Create programme)","venue":"Irish Theatre Institute","address":"17 Eustace Street, Temple Bar, Dublin 2, Ireland","eircode":"","lat":53.3451133,"lng":-6.2646806,"dates":"Currently listed; 52-week contract, 3.5 days per week","start":"","end":"","weekday":"Weekday (hours not stated; on-site in Dublin city centre, with remote working of up to one day per week open to discussion)","cost":null,"costBand":"n/a (job)","deadline":"2026-11-20 12:00 (noon, Friday)","format":"in-person","skill":"business","source":"https://www.performingartsforum.ie/job/safe-to-create-administrator/","pt":7,"walk":29,"cycle":9,"monWedConflict":"yes","eveningFeasible":"no","portfolio":"medium","portfolioWhy":"Paid arts-sector administrator post supporting a national dignity-at-work programme, including communications and training logistics, but not a making or campaign-design role.","area":"Dublin City","timeBand":"Weekday daytime"},{"id":"OPP-44","title":"Marketing Officer – Temporary (national theatre)","category":"job","organiser":"A national theatre in Dublin city centre (employer name not stated on the listing); advertised by Hays Specialist Recruitment","venue":"Dublin city centre office (street address not stated)","address":"Dublin city centre (public-transport accessible; street not stated)","eircode":"","lat":null,"lng":null,"dates":"Currently listed; temporary 4-week contract","start":"","end":"","weekday":"Weekday (hours not stated)","cost":null,"costBand":"n/a (job)","deadline":"2026-11-12 (IrishJobs listing validThrough; a separate closing sentence is not worded on the page)","format":"in-person","skill":"digital marketing","source":"https://www.irishjobs.ie/job/marketing-officer-temporary/hays-specialist-recruitment-job108172540","pt":null,"walk":null,"cycle":null,"monWedConflict":"yes","eveningFeasible":"no","portfolio":"high","portfolioWhy":"Theatre marketing post producing campaigns, copy, programmes and production photography, even though the contract is only four weeks.","area":"Dublin City","timeBand":"Weekday daytime"},{"id":"OPP-45","title":"Online Content Designer (9 Month FTC)","category":"job","organiser":"Dunnes Stores","venue":"Dunnes Stores (Online / grocery website team)","address":"Dublin (street address not stated on the listing)","eircode":"","lat":null,"lng":null,"dates":"Currently listed; 9-month fixed-term contract (start date not stated)","start":"","end":"","weekday":"Weekday (hours not stated)","cost":null,"costBand":"n/a (job)","deadline":"2026-11-12 (IrishJobs listing validThrough; a separate closing sentence is not worded on the page)","format":"in-person","skill":"design","source":"https://www.irishjobs.ie/job/content-designer/dunnes-stores-job108157549","pt":null,"walk":null,"cycle":null,"monWedConflict":"yes","eveningFeasible":"no","portfolio":"high","portfolioWhy":"Fixed-term professional content-design role producing website imagery, banner ads and copy for a national grocery platform; a portfolio is required.","area":"Dublin City","timeBand":"Weekday daytime"},{"id":"OPP-46","title":"Marketing Assistant","category":"job","organiser":"Nourish Health Food Stores","venue":"Nourish office, Santry (plus nationwide store travel)","address":"Santry, Dublin 9 (street address not stated on the listing)","eircode":"","lat":null,"lng":null,"dates":"Currently listed; full-time 37.5 hours per week, hybrid (two office days in Santry, one nationwide store-travel day, two remote days)","start":"","end":"","weekday":"Weekday (full-time employees primarily Monday–Friday; exact office hours not stated)","cost":null,"costBand":"n/a (job)","deadline":"2026-11-24 (IrishJobs listing validThrough; a separate closing sentence is not worded on the page)","format":"hybrid","skill":"digital marketing","source":"https://www.irishjobs.ie/job/marketing-assistant/nourish-health-food-stores-job108234634","pt":null,"walk":null,"cycle":null,"monWedConflict":"yes","eveningFeasible":"no","portfolio":"high","portfolioWhy":"Assistant-level role creating social, email, graphic, video and in-store campaign content for a national retail brand.","area":"Dublin City","timeBand":"Weekday daytime"}]};
-const CHECK="2026-11-11";
-const CAT_ZH={event:"活動",training:"訓練",job:"職缺"};
-const BAND_ZH={free:"免費","≤€50":"≤€50","€51–200":"€51–200",">€200":">€200","not stated":"未載明","n/a (job)":"不適用（職缺）"};
-const SKILL_ZH={design:"設計",writing:"寫作",photography:"攝影","digital marketing":"數位行銷",performance:"表演","craft/fashion":"工藝／時尚",business:"商業","AI/tech":"AI／科技"};
-const AREA_ZH={"Dublin City":"都柏林市","Dún Laoghaire-Rathdown":"鄧萊里－拉思當",Fingal:"芬戈爾","South Dublin":"南都柏林",Online:"線上"};
-const FORMAT_ZH={"in-person":"實體",online:"線上",hybrid:"混合"};
-const PORT_ZH={high:"高",medium:"中",low:"低"};
-const TIME_ZH={"Weekday daytime":"平日白天","Weekday evening":"平日晚上",Weekend:"週末","Online (weekday daytime)":"線上（平日白天）","Online (weekday evening)":"線上（平日晚上）"};
-const CAT_COLOR={event:"#1c4b82",training:"#1f6b43",job:"#b45a12"};
-const MODE_ZH={pt:"公共交通",walk:"步行",cycle:"單車"};
-const CATS=["event","training","job"];
-const BANDS=["free","≤€50","€51–200",">€200","not stated","n/a (job)"];
-const SKILLS=["design","writing","photography","digital marketing","performance","craft/fashion","business","AI/tech"];
-const TIME_ORDER=["Weekday daytime","Weekday evening","Weekend","Online (weekday daytime)","Online (weekday evening)"];
 
-const state={cats:new Set(CATS),bands:new Set(BANDS),skills:new Set(SKILLS),format:"all",mode:"pt",maxOn:false,maxMin:45,exMw:false,onlyEv:false,openDl:true,sortKey:"id",sortDir:"asc",selected:null};
-const items=DATA.items;
-
-function travelOf(it,mode){return mode==="walk"?it.walk:mode==="cycle"?it.cycle:it.pt;}
-function deadlinePassed(d){if(!d)return false;const m=String(d).match(/(\d{4}-\d{2}-\d{2})/);return m?m[1]<CHECK:false;}
-function fmtCost(it){if(it.costBand==="n/a (job)")return "不適用（職缺）";if(it.costBand==="not stated"||it.cost===null||it.cost===undefined)return "未載明";if(it.cost===0)return "免費";return "€"+it.cost;}
-function fmtMins(v){if(v===null||v===undefined)return "未載明";if(v===0)return "0（線上）";return v+" 分";}
-
-function filtered(){
-  return items.filter(it=>{
-    if(!state.cats.has(it.category))return false;
-    if(!state.bands.has(it.costBand))return false;
-    if(!state.skills.has(it.skill))return false;
-    if(state.format!=="all"&&it.format!==state.format)return false;
-    if(state.exMw&&it.monWedConflict==="yes")return false;
-    if(state.onlyEv&&it.eveningFeasible!=="yes")return false;
-    if(state.openDl&&deadlinePassed(it.deadline))return false;
-    if(state.maxOn){const t=travelOf(it,state.mode);if(t===null||t===undefined||t>state.maxMin)return false;}
-    return true;
-  });
-}
-function sorted(list){
-  const dir=state.sortDir==="asc"?1:-1;
-  return [...list].sort((a,b)=>{
-    let va,vb;
-    if(state.sortKey==="travel"){va=travelOf(a,state.mode)??9999;vb=travelOf(b,state.mode)??9999;}
-    else if(state.sortKey==="cost"){va=a.cost??-1;vb=b.cost??-1;}
-    else{va=a[state.sortKey]??"";vb=b[state.sortKey]??"";}
-    if(typeof va==="number"&&typeof vb==="number")return (va-vb)*dir;
-    return String(va).localeCompare(String(vb),"zh-Hant")*dir;
-  });
-}
-
-const kpis=DATA.kpis;
-const freeOrLow=items.filter(i=>i.costBand==="free"||i.costBand==="≤€50").length;
-const evCount=items.filter(i=>i.eveningFeasible==="yes").length;
-const mwCount=items.filter(i=>i.monWedConflict==="yes").length;
-document.getElementById("kpis").innerHTML=[
-  ["有效筆數",kpis.validCount+" / "+kpis.count],
-  ["來源可追溯率",kpis.sourceTraceabilityPct+"%"],
-  ["資料完整率",kpis.completenessPct+"%"],
-  ["免費或 ≤€50",freeOrLow+" 筆"],
-  ["晚間／週末／線上可行",evCount+" 筆"],
-  ["週一至週三白天衝突",mwCount+" 筆"],
-].map(([k,v])=>`<div class="tile"><div class="l">${k}</div><div class="v">${v}</div></div>`).join("");
-
-function chips(id, values, labels, set){
-  const el=document.getElementById(id);
-  values.forEach(v=>{
-    const b=document.createElement("button");
-    b.type="button"; b.className="chip"+(set.has(v)?" on":""); b.textContent=labels[v]||v;
-    b.onclick=()=>{if(set.has(v))set.delete(v);else set.add(v); b.classList.toggle("on"); render();};
-    el.appendChild(b);
-  });
-}
-chips("f-cat",CATS,CAT_ZH,state.cats);
-chips("f-band",BANDS,BAND_ZH,state.bands);
-chips("f-skill",SKILLS,SKILL_ZH,state.skills);
-
-function radios(id, opts, key){
-  const el=document.getElementById(id);
-  opts.forEach(([v,lab])=>{
-    const l=document.createElement("label");
-    l.innerHTML=`<input type="radio" name="${key}" value="${v}"> ${lab}`;
-    l.querySelector("input").checked=state[key]===v;
-    l.querySelector("input").onchange=()=>{state[key]=v; render();};
-    el.appendChild(l);
-  });
-}
-radios("f-format",[["all","全部"],["in-person","實體"],["online","線上"],["hybrid","混合"]],"format");
-const modeRow=document.getElementById("f-mode");
-radios("f-mode",[["pt","公共交通"],["walk","步行"],["cycle","單車"]],"mode");
-modeRow.insertAdjacentHTML("beforeend",`<label style="margin-left:8px"><input type="checkbox" id="maxOn"> 最長分鐘</label>
-<input type="range" id="maxMin" min="10" max="180" step="5" value="45" disabled>
-<span id="maxLab" style="color:#9a9084">不限</span>`);
-document.getElementById("maxOn").onchange=e=>{state.maxOn=e.target.checked;document.getElementById("maxMin").disabled=!e.target.checked;document.getElementById("maxLab").textContent=e.target.checked?state.maxMin+" 分":"不限";document.getElementById("maxLab").style.color=e.target.checked?"#0e4b4b":"#9a9084";render();};
-document.getElementById("maxMin").oninput=e=>{state.maxMin=+e.target.value;document.getElementById("maxLab").textContent=state.maxMin+" 分";render();};
-["exMw","onlyEv","openDl"].forEach(k=>{
-  document.getElementById(k).onchange=e=>{state[k]=e.target.checked;render();};
-});
-document.getElementById("reset").onclick=()=>location.reload();
-
-const map=L.map("map").setView([53.3473,-6.2591],11);
-L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",{maxZoom:19,attribution:"&copy; <a href='https://www.openstreetmap.org/copyright'>OpenStreetMap</a> contributors"}).addTo(map);
-L.circleMarker([53.3473,-6.2591],{radius:8,color:"#fff",weight:2,fillColor:"#b42318",fillOpacity:1}).addTo(map).bindTooltip("起點：O'Connell Bridge");
-let layer=L.layerGroup().addTo(map);
-
-function drawMap(list){
-  layer.clearLayers();
-  const pts=[];
-  list.forEach(it=>{
-    if(it.lat==null||it.lng==null)return;
-    pts.push([it.lat,it.lng]);
-    const m=L.circleMarker([it.lat,it.lng],{radius:state.selected===it.id?9:7,color:"#fff",weight:2,fillColor:CAT_COLOR[it.category],fillOpacity:0.95});
-    m.bindTooltip(it.title);
-    m.on("click",()=>{state.selected=it.id;render();});
-    layer.addLayer(m);
-  });
-  pts.push([53.3473,-6.2591]);
-  if(pts.length>1) map.fitBounds(pts,{padding:[28,28],maxZoom:13});
-}
-
-function drawChart(list){
-  const svg=document.getElementById("chart");
-  const pad={l:48,r:16,t:18,b:64},cw=640,ch=340,yMax=650;
-  const innerW=cw-pad.l-pad.r,innerH=ch-pad.t-pad.b;
-  const yOf=eur=>pad.t+innerH-(eur/yMax)*innerH;
-  const xOf=(tb,j)=>{const i=TIME_ORDER.indexOf(tb); const slot=innerW/TIME_ORDER.length; return pad.l+slot*i+slot/2+j;};
-  const ticks=[0,100,200,350,500,650];
-  let h="";
-  ticks.forEach(t=>{
-    const y=yOf(t);
-    h+=`<line x1="${pad.l}" x2="${cw-pad.r}" y1="${y}" y2="${y}" stroke="#e6ded0"/>`;
-    h+=`<text x="${pad.l-6}" y="${y+3}" text-anchor="end" font-size="10" fill="#5c5348">€${t}</text>`;
-  });
-  TIME_ORDER.forEach((tb,i)=>{
-    const slot=innerW/TIME_ORDER.length,x=pad.l+slot*i+slot/2;
-    const label=TIME_ZH[tb];
-    if(label.length>8) h+=`<text text-anchor="middle" font-size="10" fill="#5c5348"><tspan x="${x}" y="${ch-28}">${label.slice(0,4)}</tspan><tspan x="${x}" y="${ch-16}">${label.slice(4)}</tspan></text>`;
-    else h+=`<text x="${x}" y="${ch-28}" text-anchor="middle" font-size="10" fill="#5c5348">${label}</text>`;
-  });
-  list.filter(it=>it.category!=="job").forEach((it,idx)=>{
-    const known=typeof it.cost==="number";
-    const y=yOf(known?it.cost:0);
-    const j=((idx*17)%13)-6;
-    const x=xOf(it.timeBand,j);
-    const on=state.selected===it.id;
-    h+=`<circle cx="${x}" cy="${y}" r="${on?7:5}" fill="${known?CAT_COLOR[it.category]:"#fffaf2"}" stroke="${CAT_COLOR[it.category]}" stroke-width="${known?1:2}" data-id="${it.id}" style="cursor:pointer"/>`;
-  });
-  h+=`<text x="${cw/2}" y="${ch-6}" text-anchor="middle" font-size="11" fill="#5c5348">時間帶</text>`;
-  svg.innerHTML=h;
-  svg.querySelectorAll("circle").forEach(c=>c.addEventListener("click",()=>{state.selected=c.getAttribute("data-id");render();}));
-}
-
-const cols=[["id","編號"],["title","標題"],["category","類別"],["area","地區"],["skill","技能"],["cost","費用"],["travel",null],["monWedConflict","週一至週三衝突"],["eveningFeasible","晚間可行"],["portfolio","作品集"],["source","來源"]];
-function drawTable(list){
-  const thead=document.getElementById("thead");
-  thead.innerHTML=cols.map(([k,lab])=>`<th data-k="${k}">${lab||MODE_ZH[state.mode]}</th>`).join("");
-  thead.querySelectorAll("th").forEach(th=>{
-    const k=th.dataset.k; if(k==="source")return;
-    th.onclick=()=>{if(state.sortKey===k)state.sortDir=state.sortDir==="asc"?"desc":"asc"; else{state.sortKey=k;state.sortDir="asc";}render();};
-  });
-  const tb=document.getElementById("tbody");
-  tb.innerHTML=list.map(it=>`<tr class="${state.selected===it.id?"sel":""}" data-id="${it.id}">
-    <td>${it.id}</td><td>${escapeHtml(it.title)}</td>
-    <td style="color:${CAT_COLOR[it.category]};font-weight:600">${CAT_ZH[it.category]}</td>
-    <td>${AREA_ZH[it.area]||it.area}</td><td>${SKILL_ZH[it.skill]||it.skill}</td>
-    <td>${fmtCost(it)}</td><td>${fmtMins(travelOf(it,state.mode))}</td>
-    <td>${it.monWedConflict==="yes"?"是":"否"}</td><td>${it.eveningFeasible==="yes"?"是":"否"}</td>
-    <td title="${escapeHtml(it.portfolioWhy||"")}">${PORT_ZH[it.portfolio]||it.portfolio}</td>
-    <td><a href="${it.source}" target="_blank" rel="noreferrer" onclick="event.stopPropagation()">連結</a></td>
-  </tr>`).join("")||`<tr><td colspan="11" style="text-align:center;color:#5c5348;padding:20px">沒有符合目前篩選的機會。</td></tr>`;
-  tb.querySelectorAll("tr[data-id]").forEach(tr=>tr.onclick=()=>{state.selected=tr.dataset.id;render();});
-}
-function escapeHtml(s){return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c]));}
-
-function drawDetail(){
-  const box=document.getElementById("detail");
-  const it=items.find(i=>i.id===state.selected);
-  if(!it){box.style.display="none";return;}
-  box.style.display="block";
-  box.innerHTML=`<div style="display:flex;justify-content:space-between;gap:12px;font-size:13px;line-height:1.55">
-    <div>
-      <div style="font-size:11px;color:var(--muted)">${it.id} · ${CAT_ZH[it.category]} · ${AREA_ZH[it.area]||it.area}</div>
-      <h2>${escapeHtml(it.title)}</h2>
-      <div>${escapeHtml(it.organiser||"")}</div>
-      <div style="color:var(--muted)">${escapeHtml([it.venue,it.address].filter(Boolean).join(" · "))}</div>
-      <div>日期：${escapeHtml(it.dates||"未載明")} · ${escapeHtml(it.weekday||"")} ${it.start||""}${it.end?"–"+it.end:""}</div>
-      <div>費用：${fmtCost(it)} · 作品集價值：${PORT_ZH[it.portfolio]||it.portfolio} — ${escapeHtml(it.portfolioWhy||"")}</div>
-      <div>交通：公共交通 ${fmtMins(it.pt)}；步行 ${fmtMins(it.walk)}；單車 ${fmtMins(it.cycle)}</div>
-      <div>週一至週三白天衝突：${it.monWedConflict==="yes"?"是":"否"} · 晚間可行：${it.eveningFeasible==="yes"?"是":"否"} · 截止：${escapeHtml(it.deadline||"未載明")}</div>
-      <a href="${it.source}" target="_blank" rel="noreferrer">官方來源頁面</a>
+  <div class="modal-back" id="modal" hidden>
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <h2 id="modal-title" data-i18n="onboardTitle">設定你的檔案</h2>
+      <p id="modal-lead" class="lede" style="font-size:14px"></p>
+      <div class="steps" id="modal-steps"></div>
+      <div id="modal-body"></div>
+      <div class="modal-actions">
+        <button class="btn" type="button" id="modal-back-btn" data-i18n="back">上一步</button>
+        <div>
+          <button class="btn ghost" type="button" id="modal-skip" data-i18n="skip">略過</button>
+          <button class="btn primary" type="button" id="modal-next" data-i18n="next">下一步</button>
+        </div>
+      </div>
     </div>
-    <button class="chip" type="button" id="closeDet">關閉</button>
-  </div>`;
-  document.getElementById("closeDet").onclick=()=>{state.selected=null;render();};
-}
+  </div>
 
-function render(){
-  const list=sorted(filtered());
-  document.getElementById("count").textContent=`符合條件 ${list.length} / ${items.length} 筆`;
-  const un=list.filter(i=>i.lat==null||i.lng==null);
-  document.getElementById("unmapped").textContent=`未上圖 ${un.length} 筆（線上或地址不足）${un.length?"："+un.map(x=>x.id).join(", "):""}`;
-  drawMap(list); drawChart(list); drawTable(list); drawDetail();
-  const tip=items.find(i=>i.id===state.selected);
-  document.getElementById("chartTip").innerHTML=tip&&tip.category!=="job"?`<strong>${escapeHtml(tip.title)}</strong> · ${fmtCost(tip)} · ${TIME_ZH[tip.timeBand]||""}`:"";
-}
-render();
-</script>
+  <script src="vendor/leaflet/leaflet.js"></script>
+  <script src="vendor/leaflet/leaflet.markercluster.js"></script>
+  <script src="vendor/chart/chart.umd.min.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>
