@@ -5,30 +5,37 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="icon" href="favicon.png" />
   <title>都柏林機會地圖集 Dublin Opportunity Atlas</title>
-  <meta name="description" content="Interactive atlas of verified Dublin creative-industry events, training and entry-level jobs, with personal match scores and area equity insights." />
+  <meta name="description" content="Interactive atlas of verified Dublin creative-industry events, training and entry-level jobs, with personal match scores, equity insights, Stamp 2 checks and a refreshable official-source dataset." />
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="vendor/leaflet/leaflet.css" />
   <link rel="stylesheet" href="vendor/leaflet/MarkerCluster.css" />
   <link rel="stylesheet" href="vendor/leaflet/MarkerCluster.Default.css" />
+  <link rel="alternate" type="application/rss+xml" title="Jobs" href="feeds/jobs.xml" />
+  <link rel="alternate" type="application/rss+xml" title="Events" href="feeds/events.xml" />
+  <link rel="alternate" type="application/rss+xml" title="Training" href="feeds/training.xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;600;700&family=Noto+Sans+TC:wght@400;500;600;700&family=Noto+Serif+TC:wght@600&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
+  <div id="update-banner" class="update-banner" hidden></div>
   <header class="site-header">
     <div class="header-inner">
       <div class="brand">
         <div class="brand-kicker" data-i18n="kicker">Dublin Opportunity Atlas</div>
         <p class="brand-title" data-i18n="title">都柏林機會地圖集</p>
-        <div class="brand-sub" data-i18n="checked">資料核對：2026-11-11（Europe/Dublin）</div>
+        <div class="brand-sub" id="checked-label" data-i18n="checked">資料核對：2026-11-12（Europe/Dublin）</div>
       </div>
       <nav class="nav-links" aria-label="sections">
         <a href="#picks" data-i18n="navPicks">精選</a>
         <a href="#map-section" data-i18n="navMap">地圖</a>
         <a href="#equity" data-i18n="navEquity">公平洞察</a>
+        <a href="#planner" data-i18n="navPlanner">週計畫</a>
         <a href="#calendar" data-i18n="navCal">行事曆</a>
         <a href="#shortlist" data-i18n="navShort">短名單</a>
+        <a href="#categories" data-i18n="navCats">分類</a>
+        <a href="#changelog" data-i18n="navLog">更新紀錄</a>
         <a href="#method" data-i18n="navMethod">方法</a>
       </nav>
       <div class="header-actions">
@@ -65,9 +72,12 @@
       <div class="section-head">
         <div>
           <h2 data-i18n="topPicks">為你精選</h2>
-          <p data-i18n="topPicksSub">依媒合分數排序。每張卡片都會說明「為什麼適合你」。</p>
+          <p data-i18n="topPicksSub">依媒合分數排序。每張卡片都會說明「為什麼適合你」。分類依據可在「為什麼這樣分類」中查證。</p>
         </div>
-        <label class="chip plain"><input type="checkbox" id="only-skills" /> <span data-i18n="onlySkills">只看感興趣的技能</span></label>
+        <div class="row-actions">
+          <label class="chip plain"><input type="checkbox" id="only-skills" /> <span data-i18n="onlySkills">只看感興趣的技能</span></label>
+          <button class="btn" id="btn-compare-open" type="button" data-i18n="compareBtn">比較（最多 3 筆）</button>
+        </div>
       </div>
       <div class="picks" id="picks-grid"></div>
     </section>
@@ -80,6 +90,7 @@
         </div>
       </div>
       <div class="filters" id="filters"></div>
+      <div class="filters" id="filters-v4"></div>
       <div class="legend" id="map-legend"></div>
       <div class="map-grid">
         <div id="map" role="application" aria-label="Opportunity map"></div>
@@ -117,6 +128,26 @@
       </div>
     </section>
 
+    <section class="block" id="stamp2">
+      <div class="section-head">
+        <div>
+          <h2 data-i18n="stamp2Title">Stamp 2 工時提示</h2>
+          <p data-i18n="stamp2Sub">若職缺載明每週工時，系統會對照愛爾蘭移民局學生許可的工時上限。這不是法律意見，請自行查核官方說明。</p>
+        </div>
+      </div>
+      <div class="card stamp2-card" id="stamp2-box"></div>
+    </section>
+
+    <section class="block" id="planner">
+      <div class="section-head">
+        <div>
+          <h2 data-i18n="plannerTitle">一週規劃板</h2>
+          <p data-i18n="plannerSub">把短名單項目放到週一至週日的上午／下午／晚上。系統會加總工時、通勤與費用，並標示時段衝突。數字僅在來源有載明時才會加總。</p>
+        </div>
+      </div>
+      <div class="card" id="planner-box" style="padding:12px"></div>
+    </section>
+
     <section class="block" id="calendar">
       <div class="section-head">
         <div>
@@ -145,13 +176,79 @@
       <div id="shortlist-box" class="card" style="padding:12px"></div>
     </section>
 
+    <section class="block" id="skillgap">
+      <div class="section-head">
+        <div>
+          <h2 data-i18n="gapTitle">技能缺口</h2>
+          <p data-i18n="gapSub">比較短名單職缺在官方說明中引用的技能，與你在檔案裡選的技能，並指出資料集中哪些訓練可能補上缺口。建議只來自本資料集，不是完整職涯建議。</p>
+        </div>
+      </div>
+      <div class="card" id="skillgap-box" style="padding:16px"></div>
+    </section>
+
+    <section class="block" id="tracker">
+      <div class="section-head">
+        <div>
+          <h2 data-i18n="trackTitle">申請追蹤</h2>
+          <p data-i18n="trackSub">為職缺記錄狀態（有興趣／已申請／面試／錄取）、筆記與截止日期。資料只存在你的瀏覽器，可匯出 CSV。</p>
+        </div>
+        <div class="row-actions">
+          <button class="btn" id="btn-track-csv" type="button" data-i18n="exportTrack">匯出追蹤 CSV</button>
+        </div>
+      </div>
+      <div class="card" id="tracker-box" style="padding:12px"></div>
+    </section>
+
+    <section class="block" id="categories">
+      <div class="section-head">
+        <div>
+          <h2 data-i18n="catTitle">自訂分類（可查證）</h2>
+          <p data-i18n="catSub">用關鍵字規則或手動標記建立你自己的類型（例如「時尚」「Stamp 2 可兼職」）。每筆規則都會即時顯示符合筆數；衝突與未分類可在下方查看。規則存在瀏覽器，可匯出／匯入 JSON，也能寫進分享網址。</p>
+        </div>
+        <div class="row-actions">
+          <button class="btn primary" id="btn-cat-new" type="button" data-i18n="catNew">新增分類</button>
+          <button class="btn" id="btn-cat-export" type="button">Export JSON</button>
+          <label class="btn">Import JSON<input type="file" id="cat-import" accept="application/json" hidden /></label>
+        </div>
+      </div>
+      <div id="cat-manager"></div>
+    </section>
+
+    <section class="block" id="changelog">
+      <div class="section-head">
+        <div>
+          <h2 data-i18n="logTitle">資料更新紀錄</h2>
+          <p data-i18n="logSub">本次 refresh 新增、下架、變更與過期的項目。徽章（本週新增／已變更／已過期／已下架）來自同一份紀錄。</p>
+        </div>
+        <div class="row-actions">
+          <a class="btn" href="changelog.json" download>changelog.json</a>
+          <a class="btn" href="needs_review.json" download>needs_review.json</a>
+        </div>
+      </div>
+      <div class="card" id="changelog-box" style="padding:16px"></div>
+    </section>
+
+    <section class="block" id="feeds">
+      <div class="section-head">
+        <div>
+          <h2 data-i18n="feedTitle">訂閱與已儲存搜尋</h2>
+          <p data-i18n="feedSub">資料集為靜態網站，無法在瀏覽器裡推播通知。請用 RSS／JSON feed 訂閱類型更新，或把目前篩選存成「已儲存搜尋」稍後回來查看。</p>
+        </div>
+      </div>
+      <div class="card" id="feeds-box" style="padding:16px"></div>
+    </section>
+
     <section class="block" id="method">
       <div class="transparency card">
         <h2 data-i18n="methodTitle">資料透明度</h2>
         <div id="method-body"></div>
         <p><a href="opportunities.csv" download data-i18n="downloadCsv">下載 opportunities.csv</a>
           · <a href="atlas_data.json" download>atlas_data.json</a>
-          · <a href="travel_matrix.json" download>travel_matrix.json</a></p>
+          · <a href="travel_matrix.json" download>travel_matrix.json</a>
+          · <a href="changelog.json" download>changelog.json</a>
+          · <a href="feeds/jobs.xml">RSS: jobs</a>
+          · <a href="feeds/events.xml">RSS: events</a>
+          · <a href="feeds/training.xml">RSS: training</a></p>
       </div>
     </section>
   </main>
@@ -175,9 +272,21 @@
     </div>
   </div>
 
+  <div class="modal-back" id="drawer" hidden>
+    <div class="modal drawer" role="dialog" aria-modal="true" aria-labelledby="drawer-title">
+      <h2 id="drawer-title"></h2>
+      <div id="drawer-body"></div>
+      <div class="modal-actions">
+        <span></span>
+        <button class="btn primary" type="button" id="drawer-close" data-i18n="close">關閉</button>
+      </div>
+    </div>
+  </div>
+
   <script src="vendor/leaflet/leaflet.js"></script>
   <script src="vendor/leaflet/leaflet.markercluster.js"></script>
   <script src="vendor/chart/chart.umd.min.js"></script>
   <script src="app.js"></script>
+  <script src="app-v4.js"></script>
 </body>
 </html>

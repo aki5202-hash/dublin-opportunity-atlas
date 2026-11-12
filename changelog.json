@@ -1,0 +1,124 @@
+{
+  "generated": "2026-11-12T00:30:00+00:00",
+  "timezone": "Europe/Dublin",
+  "added": [
+    {
+      "id": "OPP-47",
+      "title": "Crime writing with Andrea Carter",
+      "source": "https://libraries.dlrcoco.ie/events-and-news/event-calendar/crime-writing-andrea-carter"
+    },
+    {
+      "id": "OPP-48",
+      "title": "The Artful Brain dlr: Creative Writing and Wellbeing — Writing Your Own Story with Veronica Casey and Mike Hanrahan",
+      "source": "https://libraries.dlrcoco.ie/events-and-news/event-calendar/artful-brain-dlr-creative-writing-and-wellbeing-writing-your-own"
+    },
+    {
+      "id": "OPP-49",
+      "title": "Dubylon (plurilingual creative writing workshop)",
+      "source": "https://www.dublincity.ie/events/dubylon-1"
+    },
+    {
+      "id": "OPP-50",
+      "title": "SoCircular Christmas Market at Dublin City Hall",
+      "source": "https://www.dublincity.ie/news/celebrate-conscious-christmas-dublin-city-halls-first-christmas-market"
+    },
+    {
+      "id": "OPP-51",
+      "title": "Receptionist (Part-Time) — Ciaran Nevin Hair Salon, Terenure",
+      "source": "https://www.jobs.ie/job/receptionist-and-first-year-trainee/ciaran-nevin-hair-salon-job108283797"
+    },
+    {
+      "id": "OPP-52",
+      "title": "First Year Trainee (Full Time) — Ciaran Nevin Hair Salon, Terenure",
+      "source": "https://www.jobs.ie/job/receptionist-and-first-year-trainee/ciaran-nevin-hair-salon-job108283797"
+    },
+    {
+      "id": "OPP-53",
+      "title": "Trainee Hair Stylist — Cats Hair Group",
+      "source": "https://www.jobs.ie/job/trainee-hair-stylist/cats-hair-group-job108226481"
+    },
+    {
+      "id": "OPP-54",
+      "title": "Audition Workshop Weekend — January",
+      "source": "https://www.thelir.ie/courses/audition-workshop-weekend"
+    },
+    {
+      "id": "OPP-55",
+      "title": "Level 1 Voice-Over Acting (January)",
+      "source": "https://www.thelir.ie/courses/l1-voice-over-jan"
+    },
+    {
+      "id": "OPP-56",
+      "title": "Screen Acting — Level 1",
+      "source": "https://www.thelir.ie/courses/screen-acting-level-1"
+    },
+    {
+      "id": "OPP-57",
+      "title": "Introduction to Playwriting",
+      "source": "https://www.thelir.ie/courses/playwriting-l1"
+    },
+    {
+      "id": "OPP-58",
+      "title": "Audiobook Narration",
+      "source": "https://www.thelir.ie/courses/audiobook-narration"
+    },
+    {
+      "id": "OPP-59",
+      "title": "Musical Theatre Level 1",
+      "source": "https://www.thelir.ie/courses/musical-theatre"
+    },
+    {
+      "id": "OPP-60",
+      "title": "Theatre Directing Level 1",
+      "source": "https://www.thelir.ie/courses/theatre-directing-level-1"
+    },
+    {
+      "id": "OPP-61",
+      "title": "Physical Theatre",
+      "source": "https://www.thelir.ie/courses/physical-theatre"
+    },
+    {
+      "id": "OPP-62",
+      "title": "Screenwriting Level 2 (Online)",
+      "source": "https://www.thelir.ie/courses/screenwriting-level-2"
+    },
+    {
+      "id": "OPP-63",
+      "title": "Audition Masterclass — January",
+      "source": "https://www.thelir.ie/courses/audition-masterclass-jan"
+    },
+    {
+      "id": "OPP-64",
+      "title": "Audition Workshop (Online) — January",
+      "source": "https://www.thelir.ie/courses/audition-workshop-online-jan27"
+    }
+  ],
+  "removed": [
+    {
+      "id": "OPP-44",
+      "title": "Marketing Officer – Temporary (national theatre)",
+      "source": "https://www.irishjobs.ie/job/marketing-officer-temporary/hays-specialist-recruitment-job108172540",
+      "reason": "Official listing returned HTTP 410 on 2026-11-12"
+    }
+  ],
+  "changed": [
+    {
+      "id": "OPP-41",
+      "title": "Design Intern (Textile / Print Design)",
+      "detail": "Official listing re-posted at a new URL (previous URL returned HTTP 410).",
+      "previous_source": "https://www.irishjobs.ie/job/design-intern/dunnes-stores-job108157788",
+      "source": "https://www.irishjobs.ie/job/design-intern/dunnes-stores-job108315293"
+    },
+    {
+      "id": "OPP-45",
+      "title": "Online Content Designer (9 Month FTC)",
+      "detail": "Official listing re-posted at a new URL (previous URL returned HTTP 410).",
+      "previous_source": "https://www.irishjobs.ie/job/content-designer/dunnes-stores-job108157549",
+      "source": "https://www.irishjobs.ie/job/online-content-designer-9-month-ftc/dunnes-stores-job108315292"
+    }
+  ],
+  "expired": [],
+  "notes": [
+    "Full refresh=True. Active=63 of 64. Jobs active=12."
+  ]
+}

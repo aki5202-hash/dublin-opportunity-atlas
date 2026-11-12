@@ -1,8 +1,8 @@
 /* Dublin Opportunity Atlas v3 */
 "use strict";
 
-const CHECK_DATE = "2026-11-11";
-const TODAY = new Date(2026, 10, 11);
+const CHECK_DATE = (window.DOA_CHECK_DATE || "2026-11-12");
+const TODAY = new Date(); // expiry uses the viewer's clock; dataset last_checked is separate
 const DAYS = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"];
 const DAY_LABEL = {
   zh: { mon: "一", tue: "二", wed: "三", thu: "四", fri: "五", sat: "六", sun: "日" },
@@ -201,11 +201,16 @@ function deadlineDate(item) {
   const ds = parseISODates(item.deadline || "");
   return ds.length ? dateObj(ds[0]) : null;
 }
+function startOfDay(d) { return new Date(d.getFullYear(), d.getMonth(), d.getDate()); }
 function isExpired(item) {
+  if (item && (item.status === "expired" || item.status === "removed")) return true;
+  const today = startOfDay(TODAY);
   const last = lastActivityDate(item);
-  if (last && last < TODAY) return true;
   const dl = deadlineDate(item);
-  return !!(dl && dl < TODAY);
+  // A date on today is still current (not strictly before today's calendar date).
+  if (last && last < today && (!dl || dl < today)) return true;
+  if (!last && dl && dl < today) return true;
+  return false;
 }
 function deadlineSoon(item) {
   const dl = deadlineDate(item);
@@ -387,6 +392,7 @@ function passesFilters(item) {
   if (filters.q && !(item.title + " " + item.organiser + " " + (item.venue || "")).toLowerCase().includes(filters.q.toLowerCase())) return false;
   const only = document.getElementById("only-skills");
   if (only && only.checked && profile.skills.length && !profile.skills.includes(item.skill)) return false;
+  if (window.DOA_V4 && typeof window.v4Passes === "function" && !window.v4Passes(item)) return false;
   return true;
 }
 function scoredList() {
@@ -412,7 +418,7 @@ function renderKpis() {
   const cells = [
     [String(active.length), profile.lang === "en" ? "Active records" : "有效紀錄", (items.length - active.length) + " " + t("expired")],
     ["100%", profile.lang === "en" ? "Source traceability" : "來源可追溯", ""],
-    [String(k.completenessPct ?? 90.1) + "%", profile.lang === "en" ? "Completeness" : "資料完整度", "1,326 / 1,472"],
+    [String(k.completenessPct ?? "") + "%", profile.lang === "en" ? "Completeness" : "資料完整度", (k.completenessFilled && k.completenessTotal) ? (k.completenessFilled + " / " + k.completenessTotal) : ""],
     [String(jobs), profile.lang === "en" ? "Jobs" : "職缺", active.filter((i) => i.category === "event").length + " / " + active.filter((i) => i.category === "training").length]
   ];
   document.getElementById("kpi-row").innerHTML = cells.map((c) => "<div class=\"kpi\"><b>" + escapeHtml(c[0]) + "</b><span>" + escapeHtml(c[1]) + (c[2] ? " · " + escapeHtml(c[2]) : "") + "</span></div>").join("");
@@ -440,7 +446,7 @@ function renderPicks() {
   box.innerHTML = list.map(({ item, s }) => {
     const why = Object.values(s.parts).map((p) => "<li>" + escapeHtml(p.why) + "</li>").join("");
     const chipCls = item.category === "job" ? "rust" : item.category === "training" ? "" : "sky";
-    return "<article class=\"pick card\" data-open=\"" + item.id + "\"><div class=\"pick-top\"><div>" +
+    return "<article class=\"pick card\" data-id=\"" + item.id + "\" data-open=\"" + item.id + "\"><div class=\"pick-top\"><div>" +
       "<span class=\"chip " + chipCls + "\">" + catLabel(item.category) + "</span> " +
       "<span class=\"chip plain\">" + escapeHtml(item.skill) + "</span> " +
       (deadlineSoon(item) ? "<span class=\"flag\">" + t("deadlineSoon") + "</span>" : "") +
@@ -879,6 +885,7 @@ function refreshViews(resetFiltersUi) {
   renderCalendar();
   renderShortlist();
   renderMethod();
+  if (window.DOA_V4 && typeof window.DOA_V4.render === 'function') window.DOA_V4.render();
 }
 function openModal(step) {
   onboardStep = step == null ? 0 : step;

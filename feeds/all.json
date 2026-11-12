@@ -1,0 +1,992 @@
+{
+  "updated": "2026-11-12T00:30:00+00:00",
+  "items": [
+    {
+      "id": "OPP-01",
+      "title": "REWORKED: A Zero-Waste Jewellery Workshop with Shock of Grey",
+      "category": "event",
+      "status": "active",
+      "source": "https://imma.ie/whats-on/winter-at-imma/",
+      "deadline": "",
+      "dates": "2026-11-14 (also separately bookable 2026-11-21 and 2026-12-12)",
+      "employment_type": "event",
+      "sectors": [
+        "fashion",
+        "education",
+        "creative"
+      ],
+      "last_checked": "2026-11-12"
+    },
+    {
+      "id": "OPP-02",
+      "title": "Tender Whispers From the Heart – Embroidery Workshops",
+      "category": "event",
+      "status": "active",
+      "source": "https://libraries.dlrcoco.ie/events-and-news/event-calendar/tender-whispers-heart-workshops",
+      "deadline": "",
+      "dates": "2026-11-21, 2026-11-28 and 2026-12-05 (participants must attend all three classes)",
+      "employment_type": "event",
+      "sectors": [
+        "fashion",
+        "education",
+        "creative"
+      ],
+      "last_checked": "2026-11-12"
+    },
+    {
+      "id": "OPP-03",
+      "title": "Chester Beatty Drop-in Drawing with Roxana Manouchehri (Portrait Drawing)",
+      "category": "event",
+      "status": "active",
+      "source": "https://chesterbeatty.ie/whats-on/onsite-drop-in-drawing/",
+      "deadline": "No booking required",
+      "dates": "2026-11-21 (a further session on 2026-12-12 is listed separately at Charleville Mall Library)",
+      "employment_type": "event",
+      "sectors": [
+        "education",
+        "design",
+        "creative"
+      ],
+      "last_checked": "2026-11-12"
+    },
+    {
+      "id": "OPP-04",
+      "title": "Writing Wednesdays (weekly write-in)",
+      "category": "event",
+      "status": "active",
+      "source": "https://www.meetup.com/writing-wednesdays/events/qrcdztyjcpbhc/",
+      "deadline": "",
+      "dates": "Weekly on Wednesdays until 2026-12-29 (next dates from 12 Nov include 12, 18 and 25 Nov 2026)",
+      "employment_type": "event",
+      "sectors": [
+        "creative"
+      ],
+      "last_checked": "2026-11-12"
+    },
+    {
+      "id": "OPP-05",
+      "title": "Think Before You Trust: Protecting Your Business in the AI Era",
+      "category": "event",
+      "status": "active",
+      "source": "https://www.localenterprise.ie/dublincity/training-events/online-bookings/free-library-talks-think-before-you-trust-protecting-your-business-in-the-ai-era-14th-december-2026.html",
+      "deadline": "",
+      "dates": "2026-12-14",
+      "employment_type": "event",
+      "sectors": [
+        "creative"
+      ],
+      "last_checked": "2026-11-12"
+    },
+    {
+      "id": "OPP-06",
+      "title": "Making it Now: An Introduction to Experimental Fiction with Dave Lordan",
+      "category": "training",
+      "status": "active",
+      "source": "https://irishwriterscentre.ie/courses/making-it-now-an-introduction-to-experimental-fiction-with-dave-lordan/",
+      "deadline": "2026-11-20 23:59 (bookings cease at midnight on the date preceding the course)",
+      "dates": "2026-11-21",
+      "employment_type": "course",
+      "sectors": [
+        "education",
+        "creative"
+      ],
+      "last_checked": "2026-11-12"
+    },
+    {
+      "id": "OPP-07",
+      "title": "Introduction to Photoshop (PHS)",
+      "category": "training",
+      "status": "active",
+      "source": "https://www.crumlincollege.ie/_fileupload/1612-city-of-dublin-fet-college-crumlin-evening-courses-brochure-september-2026-digital.pdf",
+      "deadline": "",
+      "dates": "Starts 2026-11-18, 4 weeks (Wednesdays)",
+      "employment_type": "course",
+      "sectors": [
+        "education",
+        "design",
+        "creative"
+      ],
+      "last_checked": "2026-11-12"
+    },
+    {
+      "id": "OPP-08",
+      "title": "Beginners Photography Continuation (BPC)",
+      "category": "training",
+      "status": "active",
+      "source": "https://www.crumlincollege.ie/_fileupload/1612-city-of-dublin-fet-college-crumlin-evening-courses-brochure-september-2026-digital.pdf",
+      "deadline": "",
+      "dates": "Starts 2026-11-16, 4 weeks (Mondays)",
+      "employment_type": "course",
+      "sectors": [
+        "education",
+        "creative"
+      ],
+      "last_checked": "2026-11-12"
+    },
+    {
+      "id": "OPP-09",
+      "title": "Professional Certificate in Creative Learning (NFQ Level 9, 5 credits)",
+      "category": "training",
+      "status": "active",
+      "source": "https://www.ncad.ie/postgraduate/professional-development-short-courses/professional-certificate-in-creative-learning/",
+      "deadline": "Applications close when the course is full (date not stated)",
+      "dates": "2026-12-11 to 2027-03-06; in-person Saturdays 23 Jan, 30 Jan, 6 Feb, 13 Feb, 27 Feb and 6 Mar 2027; online intro Fri 11 Dec 2026 18:30–19:30",
+      "employment_type": "course",
+      "sectors": [
+        "education",
+        "design",
+        "creative"
+      ],
+      "last_checked": "2026-11-12"
+    },
+    {
+      "id": "OPP-10",
+      "title": "Professional Certificate in AI for Design (NFQ Level 9, 5 credits)",
+      "category": "training",
+      "status": "active",
+      "source": "https://www.ncad.ie/postgraduate/professional-development-short-courses/professional-certificate-in-design-for-ai/",
+      "deadline": "",
+      "dates": "2026-12-15 to 2027-02-09 (7 weeks part-time, one evening per week)",
+      "employment_type": "course",
+      "sectors": [
+        "education",
+        "design",
+        "creative"
+      ],
+      "last_checked": "2026-11-12"
+    },
+    {
+      "id": "OPP-11",
+      "title": "Level 1 Voice-Over Acting",
+      "category": "training",
+      "status": "active",
+      "source": "https://www.thelir.ie/courses/intro-to-voice-over-weekend",
+      "deadline": "",
+      "dates": "2026-11-28 and 2026-11-29",
+      "employment_type": "course",
+      "sectors": [
+        "advertising",
+        "education",
+        "media",
+        "creative"
+      ],
+      "last_checked": "2026-11-12"
+    },
+    {
+      "id": "OPP-12",
+      "title": "ReJean: Make Your Own Denim Tote (four-week creative sewing workshop)",
+      "category": "training",
+      "status": "active",
+      "source": "https://www.meetup.com/meetup-group-fbnrhdeb/events/317159149/",
+      "deadline": "",
+      "dates": "2026-11-16, 2026-11-23, 2026-11-30 and 2026-12-07",
+      "employment_type": "course",
+      "sectors": [
+        "fashion",
+        "advertising",
+        "education",
+        "design",
+        "creative"
+      ],
+      "last_checked": "2026-11-12"
+    },
+    {
+      "id": "OPP-13",
+      "title": "Graphic Designer Graduate – Dublin (Fixed Term)",
+      "category": "job",
+      "status": "active",
+      "source": "https://www.svp.ie/careers/work-with-us/",
+      "deadline": "2026-11-24 (closing date stated on the IrishJobs listing; apply early as the role may close sooner)",
+      "dates": "Currently listed (fixed-term role; start date not stated on the public careers list)",
+      "employment_type": "contract",
+      "sectors": [
+        "creative",
+        "design",
+        "media",
+        "advertising",
+        "marketing"
+      ],
+      "last_checked": "2026-11-12"
+    },
+    {
+      "id": "OPP-14",
+      "title": "Social Media Internship (3–6–9 months, unpaid)",
+      "category": "job",
+      "status": "active",
+      "source": "https://www.lensmen.ie/social-media-intern/",
+      "deadline": "",
+      "dates": "Open / rolling (start date and closing date not stated)",
+      "employment_type": "internship",
+      "sectors": [
+        "creative",
+        "marketing",
+        "media"
+      ],
+      "last_checked": "2026-11-12"
+    },
+    {
+      "id": "OPP-15",
+      "title": "Junior Social Media Executive",
+      "category": "job",
+      "status": "active",
+      "source": "https://www.bfei.ie/uploads/images/pdf/Remi_Junior_Social_Media_Executive_2026.pdf",
+      "deadline": "",
+      "dates": "Currently listed (start date stated as TBC on the vacancy notice)",
+      "employment_type": "full-time",
+      "sectors": [
+        "creative",
+        "marketing",
+        "media"
+      ],
+      "last_checked": "2026-11-12"
+    },
+    {
+      "id": "OPP-16",
+      "title": "Singing a Little Song: Finding Your Sonnet Voice with Catherine Ann Cullen",
+      "category": "training",
+      "status": "active",
+      "source": "https://irishwriterscentre.ie/courses/singing-a-little-song-finding-your-sonnet-voice-with-catherine-ann-cullen/",
+      "deadline": "2026-11-13 23:59 (bookings cease at midnight on the date preceding the course)",
+      "dates": "2026-11-14",
+      "employment_type": "course",
+      "sectors": [
+        "advertising",
+        "education",
+        "creative"
+      ],
+      "last_checked": "2026-11-12"
+    },
+    {
+      "id": "OPP-17",
+      "title": "Creative Space (monthly open mic)",
+      "category": "event",
+      "status": "active",
+      "source": "https://www.axisballymun.ie/open-mic",
+      "deadline": "",
+      "dates": "2026-11-25 and 2026-12-16",
+      "employment_type": "event",
+      "sectors": [
+        "media",
+        "creative"
+      ],
+      "last_checked": "2026-11-12"
+    },
+    {
+      "id": "OPP-18",
+      "title": "Poems for Assembly",
+      "category": "event",
+      "status": "active",
+      "source": "https://www.poetryireland.ie/news-events/poems-assembly",
+      "deadline": "",
+      "dates": "2026-11-12",
+      "employment_type": "event",
+      "sectors": [
+        "media",
+        "creative"
+      ],
+      "last_checked": "2026-11-12"
+    },
+    {
+      "id": "OPP-19",
+      "title": "Insights: 'I do this, I do that': Sampling the Everyday",
+      "category": "training",
+      "status": "active",
+      "source": "https://www.poetryireland.ie/news-events/insights-i-do-i-do-sampling-everyday",
+      "deadline": "",
+      "dates": "2026-11-23",
+      "employment_type": "course",
+      "sectors": [
+        "education",
+        "media",
+        "creative"
+      ],
+      "last_checked": "2026-11-12"
+    },
+    {
+      "id": "OPP-20",
+      "title": "DABF26 Workshop: ALSO editions, ‘Blackout Poetry’",
+      "category": "event",
+      "status": "active",
+      "source": "https://www.templebargallery.com/whats-on/events/dabf26-workshop-also-editions-blackout-poetry",
+      "deadline": "",
+      "dates": "2026-12-06",
+      "employment_type": "event",
+      "sectors": [
+        "education",
+        "design",
+        "media",
+        "creative"
+      ],
+      "last_checked": "2026-11-12"
+    },
+    {
+      "id": "OPP-21",
+      "title": "Xchange (experimental live-art and performance jam)",
+      "category": "event",
+      "status": "active",
+      "source": "https://www.ruared.ie/whatson",
+      "deadline": "",
+      "dates": "2026-11-29",
+      "employment_type": "event",
+      "sectors": [
+        "creative"
+      ],
+      "last_checked": "2026-11-12"
+    },
+    {
+      "id": "OPP-22",
+      "title": "Rua Red Adult Drawing Classes (Saturday artist-led sessions)",
+      "category": "training",
+      "status": "active",
+      "source": "https://www.ruared.ie/whatson",
+      "deadline": "",
+      "dates": "Every Saturday 15:30–17:00; Christmas-themed options on 2026-12-13 and 2026-12-20",
+      "employment_type": "course",
+      "sectors": [
+        "design",
+        "creative"
+      ],
+      "last_checked": "2026-11-12"
+    },
+    {
+      "id": "OPP-23",
+      "title": "Rua Red Mid-Week Drawing Sessions (self-led drop-in)",
+      "category": "event",
+      "status": "active",
+      "source": "https://www.ruared.ie/whatson",
+      "deadline": "No booking required (free drop-in)",
+      "dates": "Weekly on Wednesdays (ongoing listing)",
+      "employment_type": "event",
+      "sectors": [
+        "design",
+        "creative"
+      ],
+      "last_checked": "2026-11-12"
+    },
+    {
+      "id": "OPP-24",
+      "title": "Getting Creative with Words with Felicia McCarthy (The Write Time 2026)",
+      "category": "event",
+      "status": "active",
+      "source": "https://explorefingal.ie/whats-on/getting-creative-with-words-with-felicia-mccarthy-write-time/",
+      "deadline": "",
+      "dates": "2026-11-12",
+      "employment_type": "event",
+      "sectors": [
+        "education",
+        "creative"
+      ],
+      "last_checked": "2026-11-12"
+    },
+    {
+      "id": "OPP-25",
+      "title": "Demystifying the Personal Essay with Ellen Brickley",
+      "category": "event",
+      "status": "active",
+      "source": "https://explorefingal.ie/whats-on/demystifying-the-personal-essay-with-ellen-brickley-2/",
+      "deadline": "",
+      "dates": "2026-11-19",
+      "employment_type": "event",
+      "sectors": [
+        "education",
+        "creative"
+      ],
+      "last_checked": "2026-11-12"
+    },
+    {
+      "id": "OPP-26",
+      "title": "The Art of Us with Rough Draft Poetry and Ivy",
+      "category": "event",
+      "status": "active",
+      "source": "https://explorefingal.ie/whats-on/the-art-of-us-with-rough-draft-poetry-and-ivy/",
+      "deadline": "No booking required",
+      "dates": "2026-11-17",
+      "employment_type": "event",
+      "sectors": [
+        "education",
+        "media",
+        "creative"
+      ],
+      "last_checked": "2026-11-12"
+    },
+    {
+      "id": "OPP-27",
+      "title": "LEO DLR Group Information Session",
+      "category": "event",
+      "status": "active",
+      "source": "https://www.localenterprise.ie/dlr/training-events/online-bookings/events/leo-dlr-group-information-session-18-nov-2026.html",
+      "deadline": "",
+      "dates": "2026-11-18 (a further session is listed for 2026-12-01)",
+      "employment_type": "event",
+      "sectors": [
+        "aesthetics/beauty",
+        "creative"
+      ],
+      "last_checked": "2026-11-12"
+    },
+    {
+      "id": "OPP-28",
+      "title": "Actor as Writer",
+      "category": "training",
+      "status": "active",
+      "source": "https://www.thelir.ie/courses/actor-as-writer-weekend",
+      "deadline": "",
+      "dates": "2026-12-12 and 2026-12-13",
+      "employment_type": "course",
+      "sectors": [
+        "advertising",
+        "education",
+        "creative"
+      ],
+      "last_checked": "2026-11-12"
+    },
+    {
+      "id": "OPP-29",
+      "title": "Ag Aisteoireacht as Gaeilge / Acting in Irish",
+      "category": "training",
+      "status": "active",
+      "source": "https://www.thelir.ie/courses/acting-in-irish",
+      "deadline": "",
+      "dates": "2026-11-28 and 2026-11-29",
+      "employment_type": "course",
+      "sectors": [
+        "education",
+        "creative"
+      ],
+      "last_checked": "2026-11-12"
+    },
+    {
+      "id": "OPP-30",
+      "title": "Acting – Level 1",
+      "category": "training",
+      "status": "active",
+      "source": "https://www.thelir.ie/courses/acting-level-1",
+      "deadline": "",
+      "dates": "Starts 2027-01-12, 10 weeks (Tuesdays)",
+      "employment_type": "course",
+      "sectors": [
+        "education",
+        "creative"
+      ],
+      "last_checked": "2026-11-12"
+    },
+    {
+      "id": "OPP-31",
+      "title": "Screenwriting Level 1 (Online)",
+      "category": "training",
+      "status": "active",
+      "source": "https://www.thelir.ie/courses/screenwriting-level-1",
+      "deadline": "",
+      "dates": "Starts 2027-01-12, 10 weeks (Tuesdays)",
+      "employment_type": "course",
+      "sectors": [
+        "education",
+        "media",
+        "creative"
+      ],
+      "last_checked": "2026-11-12"
+    },
+    {
+      "id": "OPP-32",
+      "title": "Social Media Strategy & Content Planning",
+      "category": "training",
+      "status": "active",
+      "source": "https://www.localenterprise.ie/dlr/training-events/online-bookings/events/social-media-strategy-content-planning-25th-nov-2026.html",
+      "deadline": "",
+      "dates": "2026-11-25",
+      "employment_type": "course",
+      "sectors": [
+        "aesthetics/beauty",
+        "advertising",
+        "marketing",
+        "education",
+        "media",
+        "creative"
+      ],
+      "last_checked": "2026-11-12"
+    },
+    {
+      "id": "OPP-33",
+      "title": "Pitching and Presentation Skills Workshop",
+      "category": "training",
+      "status": "active",
+      "source": "https://www.localenterprise.ie/dlr/training-events/online-bookings/events/pitching-and-presentation-skills-workshop-2nd-dec-2026.html",
+      "deadline": "",
+      "dates": "2026-12-02",
+      "employment_type": "course",
+      "sectors": [
+        "aesthetics/beauty",
+        "education",
+        "creative"
+      ],
+      "last_checked": "2026-11-12"
+    },
+    {
+      "id": "OPP-34",
+      "title": "Digital & AI Boost: LEO’s Digital Toolkit to Success",
+      "category": "training",
+      "status": "active",
+      "source": "https://www.localenterprise.ie/fingal/training-events/online-bookings/miscellaneous/digital-ai-boost-leos-digital-toolkit-to-success-thursday-19th-november.html",
+      "deadline": "",
+      "dates": "2026-11-19",
+      "employment_type": "course",
+      "sectors": [
+        "education",
+        "creative"
+      ],
+      "last_checked": "2026-11-12"
+    },
+    {
+      "id": "OPP-35",
+      "title": "NEXT STEPS Network Meet Up: Pitch, Partner, and Power Up",
+      "category": "event",
+      "status": "active",
+      "source": "https://www.localenterprise.ie/dublincity/training-events/online-bookings/next-steps-network-meet-up-friday-20th-november-2026.html",
+      "deadline": "",
+      "dates": "2026-11-20",
+      "employment_type": "event",
+      "sectors": [
+        "creative"
+      ],
+      "last_checked": "2026-11-12"
+    },
+    {
+      "id": "OPP-36",
+      "title": "Business Advice Clinic",
+      "category": "event",
+      "status": "active",
+      "source": "https://www.localenterprise.ie/dublincity/training-events/online-bookings/business-advice-clinic-tuesday-17th-nov-2026.html",
+      "deadline": "",
+      "dates": "2026-11-17",
+      "employment_type": "event",
+      "sectors": [
+        "creative"
+      ],
+      "last_checked": "2026-11-12"
+    },
+    {
+      "id": "OPP-37",
+      "title": "Marketing Intern – Ireland (Marketing Assistant, Consumer Beauty)",
+      "category": "job",
+      "status": "active",
+      "source": "https://careers.coty.com/job/Dublin-Marketing-Intern-Ireland-D-D02-W261/1452451033/",
+      "deadline": "",
+      "dates": "Currently listed; 13-month fixed-term contract starting July 2027 (posted 29 Oct 2026)",
+      "employment_type": "internship",
+      "sectors": [
+        "marketing",
+        "advertising",
+        "aesthetics/beauty",
+        "creative"
+      ],
+      "last_checked": "2026-11-12"
+    },
+    {
+      "id": "OPP-38",
+      "title": "Poets Coaching Clinic with Anne Tannam",
+      "category": "event",
+      "status": "active",
+      "source": "https://www.poetryireland.ie/news-events/poets-coaching-clinic-anne-tannam-0",
+      "deadline": "",
+      "dates": "2026-11-12",
+      "employment_type": "event",
+      "sectors": [
+        "media",
+        "creative"
+      ],
+      "last_checked": "2026-11-12"
+    },
+    {
+      "id": "OPP-39",
+      "title": "Chester Beatty Drop-in Drawing with Roxana Manouchehri (Festive Patterns & Illuminated Margins)",
+      "category": "event",
+      "status": "active",
+      "source": "https://chesterbeatty.ie/whats-on/onsite-drop-in-drawing/",
+      "deadline": "No booking required",
+      "dates": "2026-12-12",
+      "employment_type": "event",
+      "sectors": [
+        "design",
+        "creative"
+      ],
+      "last_checked": "2026-11-12"
+    },
+    {
+      "id": "OPP-40",
+      "title": "Dance Social Workshops with Philippa Donnellan",
+      "category": "event",
+      "status": "active",
+      "source": "https://www.ruared.ie/whatson",
+      "deadline": "",
+      "dates": "Remaining listed dates: 2026-11-11 and 2026-11-18 (series began 30 September)",
+      "employment_type": "event",
+      "sectors": [
+        "education",
+        "creative"
+      ],
+      "last_checked": "2026-11-12"
+    },
+    {
+      "id": "OPP-41",
+      "title": "Design Intern (Textile / Print Design)",
+      "category": "job",
+      "status": "active",
+      "source": "https://www.irishjobs.ie/job/design-intern/dunnes-stores-job108315293",
+      "deadline": "2026-12-12 (IrishJobs listing validThrough; a separate closing sentence is not worded on the page)",
+      "dates": "Currently listed; internship for print design graduates in the Textile Departments (start date not stated)",
+      "employment_type": "internship",
+      "sectors": [
+        "creative",
+        "fashion",
+        "design"
+      ],
+      "last_checked": "2026-11-12"
+    },
+    {
+      "id": "OPP-42",
+      "title": "Traditional Arts Assistant (Clerical Officer, part-time)",
+      "category": "job",
+      "status": "active",
+      "source": "https://artscouncil.ie/careers/traditional-arts-assistant/",
+      "deadline": "2026-11-24 12:00 (noon, Tuesday)",
+      "dates": "Currently listed; permanent part-time, 17.5 hours per week",
+      "employment_type": "part-time",
+      "sectors": [
+        "creative",
+        "education"
+      ],
+      "last_checked": "2026-11-12"
+    },
+    {
+      "id": "OPP-43",
+      "title": "Safe to Create Administrator",
+      "category": "job",
+      "status": "active",
+      "source": "https://www.performingartsforum.ie/job/safe-to-create-administrator/",
+      "deadline": "2026-11-20 12:00 (noon, Friday)",
+      "dates": "Currently listed; 52-week contract, 3.5 days per week",
+      "employment_type": "part-time",
+      "sectors": [
+        "creative",
+        "education"
+      ],
+      "last_checked": "2026-11-12"
+    },
+    {
+      "id": "OPP-45",
+      "title": "Online Content Designer (9 Month FTC)",
+      "category": "job",
+      "status": "active",
+      "source": "https://www.irishjobs.ie/job/online-content-designer-9-month-ftc/dunnes-stores-job108315292",
+      "deadline": "2026-12-12 (IrishJobs listing validThrough; a separate closing sentence is not worded on the page)",
+      "dates": "Currently listed; 9-month fixed-term contract (start date not stated)",
+      "employment_type": "contract",
+      "sectors": [
+        "creative",
+        "design",
+        "marketing",
+        "media"
+      ],
+      "last_checked": "2026-11-12"
+    },
+    {
+      "id": "OPP-46",
+      "title": "Marketing Assistant",
+      "category": "job",
+      "status": "active",
+      "source": "https://www.irishjobs.ie/job/marketing-assistant/nourish-health-food-stores-job108234634",
+      "deadline": "2026-11-24 (IrishJobs listing validThrough; a separate closing sentence is not worded on the page)",
+      "dates": "Currently listed; full-time 37.5 hours per week, hybrid (two office days in Santry, one nationwide store-travel day, two remote days)",
+      "employment_type": "full-time",
+      "sectors": [
+        "marketing",
+        "advertising",
+        "creative"
+      ],
+      "last_checked": "2026-11-12"
+    },
+    {
+      "id": "OPP-47",
+      "title": "Crime writing with Andrea Carter",
+      "category": "event",
+      "status": "active",
+      "source": "https://libraries.dlrcoco.ie/events-and-news/event-calendar/crime-writing-andrea-carter",
+      "deadline": "Booking is needed (deadline not stated)",
+      "dates": "2026-11-19",
+      "employment_type": "event",
+      "sectors": [
+        "creative",
+        "education",
+        "media"
+      ],
+      "last_checked": "2026-11-12"
+    },
+    {
+      "id": "OPP-48",
+      "title": "The Artful Brain dlr: Creative Writing and Wellbeing — Writing Your Own Story with Veronica Casey and Mike Hanrahan",
+      "category": "event",
+      "status": "active",
+      "source": "https://libraries.dlrcoco.ie/events-and-news/event-calendar/artful-brain-dlr-creative-writing-and-wellbeing-writing-your-own",
+      "deadline": "Book your tickets from Monday 19 October 2026 (closing date not stated)",
+      "dates": "2026-11-17",
+      "employment_type": "event",
+      "sectors": [
+        "creative",
+        "education"
+      ],
+      "last_checked": "2026-11-12"
+    },
+    {
+      "id": "OPP-49",
+      "title": "Dubylon (plurilingual creative writing workshop)",
+      "category": "event",
+      "status": "active",
+      "source": "https://www.dublincity.ie/events/dubylon-1",
+      "deadline": "No booking required",
+      "dates": "2026-11-21 and 2026-11-24 (a 2026-11-07 session is also listed and has now passed)",
+      "employment_type": "event",
+      "sectors": [
+        "creative",
+        "education"
+      ],
+      "last_checked": "2026-11-12"
+    },
+    {
+      "id": "OPP-50",
+      "title": "SoCircular Christmas Market at Dublin City Hall",
+      "category": "event",
+      "status": "active",
+      "source": "https://www.dublincity.ie/news/celebrate-conscious-christmas-dublin-city-halls-first-christmas-market",
+      "deadline": "Drop-in market; individual workshop booking details will be announced in advance of the event",
+      "dates": "2026-12-06",
+      "employment_type": "event",
+      "sectors": [
+        "creative",
+        "fashion",
+        "aesthetics/beauty"
+      ],
+      "last_checked": "2026-11-12"
+    },
+    {
+      "id": "OPP-51",
+      "title": "Receptionist (Part-Time) — Ciaran Nevin Hair Salon, Terenure",
+      "category": "job",
+      "status": "active",
+      "source": "https://www.jobs.ie/job/receptionist-and-first-year-trainee/ciaran-nevin-hair-salon-job108283797",
+      "deadline": "2026-12-05 (Jobs.ie listing validThrough; a separate closing sentence is not worded on the page)",
+      "dates": "Currently listed; part-time receptionist role (hours per week not stated)",
+      "employment_type": "part-time",
+      "sectors": [
+        "aesthetics/beauty",
+        "creative"
+      ],
+      "last_checked": "2026-11-12"
+    },
+    {
+      "id": "OPP-52",
+      "title": "First Year Trainee (Full Time) — Ciaran Nevin Hair Salon, Terenure",
+      "category": "job",
+      "status": "active",
+      "source": "https://www.jobs.ie/job/receptionist-and-first-year-trainee/ciaran-nevin-hair-salon-job108283797",
+      "deadline": "2026-12-05 (Jobs.ie listing validThrough; a separate closing sentence is not worded on the page)",
+      "dates": "Currently listed; full-time first-year trainee (the listing mentions an 8 hour shift; weekly hours are not totalled)",
+      "employment_type": "full-time",
+      "sectors": [
+        "aesthetics/beauty",
+        "creative"
+      ],
+      "last_checked": "2026-11-12"
+    },
+    {
+      "id": "OPP-53",
+      "title": "Trainee Hair Stylist — Cats Hair Group",
+      "category": "job",
+      "status": "active",
+      "source": "https://www.jobs.ie/job/trainee-hair-stylist/cats-hair-group-job108226481",
+      "deadline": "2026-11-22 (Jobs.ie listing validThrough; a separate closing sentence is not worded on the page)",
+      "dates": "Currently listed; IrishJobs/Jobs.ie marks the posting as FULL_TIME (weekly hours not stated)",
+      "employment_type": "full-time",
+      "sectors": [
+        "aesthetics/beauty",
+        "creative"
+      ],
+      "last_checked": "2026-11-12"
+    },
+    {
+      "id": "OPP-54",
+      "title": "Audition Workshop Weekend — January",
+      "category": "training",
+      "status": "active",
+      "source": "https://www.thelir.ie/courses/audition-workshop-weekend",
+      "deadline": "",
+      "dates": "2027-01-09 and 2027-01-10",
+      "employment_type": "course",
+      "sectors": [
+        "creative",
+        "education",
+        "media"
+      ],
+      "last_checked": "2026-11-12"
+    },
+    {
+      "id": "OPP-55",
+      "title": "Level 1 Voice-Over Acting (January)",
+      "category": "training",
+      "status": "active",
+      "source": "https://www.thelir.ie/courses/l1-voice-over-jan",
+      "deadline": "",
+      "dates": "2027-01-09 and 2027-01-10",
+      "employment_type": "course",
+      "sectors": [
+        "creative",
+        "education",
+        "media"
+      ],
+      "last_checked": "2026-11-12"
+    },
+    {
+      "id": "OPP-56",
+      "title": "Screen Acting — Level 1",
+      "category": "training",
+      "status": "active",
+      "source": "https://www.thelir.ie/courses/screen-acting-level-1",
+      "deadline": "",
+      "dates": "Starts 2027-01-11, 10 weeks (Mondays)",
+      "employment_type": "course",
+      "sectors": [
+        "creative",
+        "education",
+        "media"
+      ],
+      "last_checked": "2026-11-12"
+    },
+    {
+      "id": "OPP-57",
+      "title": "Introduction to Playwriting",
+      "category": "training",
+      "status": "active",
+      "source": "https://www.thelir.ie/courses/playwriting-l1",
+      "deadline": "",
+      "dates": "Starts 2027-01-12, 10 weeks (Tuesdays)",
+      "employment_type": "course",
+      "sectors": [
+        "creative",
+        "education",
+        "media"
+      ],
+      "last_checked": "2026-11-12"
+    },
+    {
+      "id": "OPP-58",
+      "title": "Audiobook Narration",
+      "category": "training",
+      "status": "active",
+      "source": "https://www.thelir.ie/courses/audiobook-narration",
+      "deadline": "",
+      "dates": "Starts 2027-01-11, 10 weeks (Mondays)",
+      "employment_type": "course",
+      "sectors": [
+        "creative",
+        "education",
+        "media"
+      ],
+      "last_checked": "2026-11-12"
+    },
+    {
+      "id": "OPP-59",
+      "title": "Musical Theatre Level 1",
+      "category": "training",
+      "status": "active",
+      "source": "https://www.thelir.ie/courses/musical-theatre",
+      "deadline": "",
+      "dates": "Starts 2027-01-13, 10 weeks (Wednesdays)",
+      "employment_type": "course",
+      "sectors": [
+        "creative",
+        "education",
+        "media"
+      ],
+      "last_checked": "2026-11-12"
+    },
+    {
+      "id": "OPP-60",
+      "title": "Theatre Directing Level 1",
+      "category": "training",
+      "status": "active",
+      "source": "https://www.thelir.ie/courses/theatre-directing-level-1",
+      "deadline": "",
+      "dates": "Starts 2027-01-13, 10 weeks (Wednesdays)",
+      "employment_type": "course",
+      "sectors": [
+        "creative",
+        "education",
+        "media"
+      ],
+      "last_checked": "2026-11-12"
+    },
+    {
+      "id": "OPP-61",
+      "title": "Physical Theatre",
+      "category": "training",
+      "status": "active",
+      "source": "https://www.thelir.ie/courses/physical-theatre",
+      "deadline": "",
+      "dates": "Starts 2027-01-13, 10 weeks (Wednesdays)",
+      "employment_type": "course",
+      "sectors": [
+        "creative",
+        "education",
+        "media"
+      ],
+      "last_checked": "2026-11-12"
+    },
+    {
+      "id": "OPP-62",
+      "title": "Screenwriting Level 2 (Online)",
+      "category": "training",
+      "status": "active",
+      "source": "https://www.thelir.ie/courses/screenwriting-level-2",
+      "deadline": "",
+      "dates": "Starts 2027-01-14, 10 weeks (Thursdays)",
+      "employment_type": "course",
+      "sectors": [
+        "creative",
+        "education",
+        "media"
+      ],
+      "last_checked": "2026-11-12"
+    },
+    {
+      "id": "OPP-63",
+      "title": "Audition Masterclass — January",
+      "category": "training",
+      "status": "active",
+      "source": "https://www.thelir.ie/courses/audition-masterclass-jan",
+      "deadline": "",
+      "dates": "Starts 2027-01-16, 2 weekends",
+      "employment_type": "course",
+      "sectors": [
+        "creative",
+        "education",
+        "media"
+      ],
+      "last_checked": "2026-11-12"
+    },
+    {
+      "id": "OPP-64",
+      "title": "Audition Workshop (Online) — January",
+      "category": "training",
+      "status": "active",
+      "source": "https://www.thelir.ie/courses/audition-workshop-online-jan27",
+      "deadline": "",
+      "dates": "2027-01-16",
+      "employment_type": "course",
+      "sectors": [
+        "creative",
+        "education",
+        "media"
+      ],
+      "last_checked": "2026-11-12"
+    }
+  ]
+}
